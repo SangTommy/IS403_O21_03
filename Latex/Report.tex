@@ -47,11 +47,11 @@
 \maketitle
 
 \begin{abstract}
-Bài báo sử dụng kỹ thuật phân tích chuỗi thời gian trong bài toán dự đoán giá cổ phiếu. Dự đoán giá cổ phiếu là một tác vụ khó khăn do tính phức tạp và biến động của thị trường tài chính. Trong bài báo, chúng tôi sử dụng các mô hình: Exponential Smoothing State Space Model (ETS), Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, Autoregressive Integrated Moving Average (ARIMA), Recurrent Neural Networks (RNN), Gated recurrent units (GRU), và Long Short-Term Memory (LSTM) để dự đoán giá cổ phiếu trên ba bộ dữ liệu AbbVie, AstraZeneca và Pfizer. Sau đó thực hiện so sánh hiệu suất của các mô hình dựa trên ba độ đo: RMSE, MAE và MAPE.
+Bài báo sử dụng kỹ thuật phân tích chuỗi thời gian trong bài toán dự đoán giá cổ phiếu. Dự đoán giá cổ phiếu là một tác vụ khó khăn do tính phức tạp và biến động của thị trường tài chính. Trong bài báo, chúng tôi sử dụng các mô hình: SEMOS, Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, Autoregressive Integrated Moving Average (ARIMA), Recurrent Neural Networks (RNN), Gated recurrent units (GRU), và Long Short-Term Memory (LSTM) để dự đoán giá cổ phiếu trên ba bộ dữ liệu AbbVie, AstraZeneca và Pfizer. Sau đó thực hiện so sánh hiệu suất của các mô hình dựa trên ba độ đo: RMSE, MAE và MAPE.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Cổ phiếu, ETS, Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LTSM
+Cổ phiếu, SEMOS, Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LTSM
 \end{IEEEkeywords}
 
 \section{GIỚI THIỆU}
@@ -61,7 +61,7 @@ Cổ phiếu được coi là hình thức đầu tư trọng điểm trong ngà
 
 Một phương pháp tiếp cận sơ bộ trong việc định giá cổ phiếu là đánh giá giá trị cổ phiếu. Nếu giá cổ phiếu hiện tại thấp hơn giá trị đã định giá, nhà đầu tư có thể xem xét mua cổ phiếu. Ngược lại, nếu giá cổ phiếu vượt quá giá trị đã định giá và nhà đầu tư hiện đang sở hữu cổ phiếu, họ có thể bán cổ phiếu để thu về lợi nhuận.
 
-Thực tế cho thấy có nhiều thuật toán và kỹ thuật hỗ trợ việc dự báo giá cổ phiếu của ba doanh nghiệp bao gồm: Catalent, Intel Corporation, Nutrien. Trong nghiên cứu này, chúng tôi sẽ áp dụng 10 mô hình: Exponential Smoothing State Space Model (ETS), Meta-Learning, Fuzzy for predict time series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LSTM để tiến hành đánh giá hiệu suất các mô hình, sau đó sử dụng hai mô hình tốt nhất thực hiện dự đoán giá đóng cửa của cổ phiếu trong 30 ngày, 60 ngày và 90 ngày tiếp theo. 
+Thực tế cho thấy có nhiều thuật toán và kỹ thuật hỗ trợ việc dự báo giá cổ phiếu của ba doanh nghiệp bao gồm: Catalent, Intel Corporation, Nutrien. Trong nghiên cứu này, chúng tôi sẽ áp dụng 10 mô hình: SEMOS, Meta-Learning, Fuzzy for predict time series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LSTM để tiến hành đánh giá hiệu suất các mô hình, sau đó sử dụng hai mô hình tốt nhất thực hiện dự đoán giá đóng cửa của cổ phiếu trong 30 ngày, 60 ngày và 90 ngày tiếp theo. 
 
 \section{CÁC NGHIÊN CỨU LIÊN QUAN}
 Zou Xiaowu và đồng nghiệp cung cấp các phương pháp dựa trên CNN cho Phân loại Chuỗi Thời gian (TSC) [1] và các hàm kích hoạt được sử dụng. Một MC-CNN được đề xuất cho phân loại chuỗi thời gian đa biến. Phương pháp này trích xuất đặc trưng bằng cách sử dụng nhiều CNN khác nhau và kết hợp chúng. một CNN đa quy mô.
@@ -223,16 +223,35 @@ Trong lĩnh vực thống kê, Linear Regression là một phương pháp dùng 
 
 Khi chỉ có một biến độc lập, chúng ta gọi là hồi quy tuyến tính đơn giản (Simple Linear Regression). Trong trường hợp có nhiều biến độc lập, ta gọi là hồi quy tuyến tính đa biến (Multiple Linear Legression)
 
-Simple Linear Regression được mô tả qua công thức: \\
-
-\( y = \beta_0 + \beta_1 x + \varepsilon \) \\
-
+Simple Linear Regression được mô tả qua công thức:
+\[
+ y = \beta_0 + \beta_1 x + \varepsilon
+\]
 Trong đó:\\
 	\indent\textbullet\ \(y\) : biến phụ thuộc (dependent variable) cần dự đoán.\\
 	\indent\textbullet\ \(x\) : biến độc lập (independent variable) được sử dụng để dự đoán giá trị của y.\\
         \indent\textbullet\ $\beta_0$ : hệ số góc (intercept) của đường hồi quy, đại diện cho giá trị dự đoán của y khi x = 0.\\
         \indent\textbullet\ $\beta_1$ : hệ số hồi quy (regression coefficient), đại diện cho mức độ thay đổi của y dựa trên mỗi đơn vị thay đổi của x.\\
         \indent\textbullet\ $\varepsilon$: lỗi ngẫu nhiên (random error), biểu thị sự không thể tránh khỏi của mô hình trong việc mô phỏng dữ liệu thực tế.
+\subsection{GRU}
+GRU là một loại mạng thần kinh hồi quy dựa trên LSTM được tối ưu hóa đặc biệt, Đơn vị bên trong GRU tương tự như đơn vị bên trong LSTM, ngoại trừ việc GRU kết hợp cổng đến và cổng quên trong LSTM thành một cổng cập nhật duy nhất.
+Mặc dù nó được lấy cảm hứng từ đơn vị LSTM, nhưng nó được coi là đơn giản hơn để tính toán và thực hiện. Nó duy trì khả năng miễn dịch LSTM đối với vấn đề độ dốc biến mất. Cấu trúc bên trong của nó đơn giản hơn và do đó, nó cũng dễ đào tạo hơn, vì cần ít tính toán hơn để nâng cấp các trạng thái bên trong. Cổng cập nhật kiểm soát mức độ thông tin trạng thái từ thời điểm trước đó được giữ lại ở trạng thái hiện tại, trong khi cổng đặt lại xác định xem trạng thái hiện tại có nên được kết hợp với thông tin trước đó hay không.
+\begin{align*}
+Z_t &= \sigma(x_t W^z + h_{t-1} U^z + b_z) \\
+r_t &= \sigma(x_t W^r + h_{t-1} U^r + b_r) \\
+\tilde{h}_t &= \tan(r_t \times h_{t-1} U + x_t W + b) \\
+h_t &= (1 - z_t) \times \tilde{h}_t + z_t \times h_{t-1}
+\end{align*}
+
+\(W^z\), \(W^r\), W biểu thị các ma trận trọng số cho vectơ đầu vào được kết nối tương ứng.\(U^z\), \(U^r\), U đại diện cho ma trận trọng số của bước thời gian trước đó và $b_r$, $b_z$, b là sai lệch. Các $\sigma$ biểu thị chức năng sigmoid logistic, $r_t$ biểu thị cổng đặt lại, $z_t$ biểu thị cổng cập nhật và $\tilde{h}_t$ biểu thị lớp ẩn ứng cử viên.
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/GRU.png}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
 \subsection{ARIMA}
 Trong một mô hình ARIMA, giá trị tương lai của một biến được giả định là một hàm tuyến tính của một số quan sát quá khứ cộng với các lỗi ngẫu nhiên. Hàm tuyến tính này dựa trên ba thành phần tham số: tự hồi quy (AR), tích hợp sai phân (I) và trung bình trượt (MA). Mô hình ARIMA có thể được ký hiệu là ARIMA(p, d, q), trong đó p là số lượng thành phần tự hồi quy, d là số lượng sự khác biệt không mùa và q là số lượng lỗi dự báo trễ trong phương trình dự đoán. Giá trị tương lai của một biến trong ARIMA được biểu thị như sau:\\
 
@@ -242,7 +261,156 @@ Trong đó:\\
 	\indent\textbullet\ \(y_t\) : giá trị thực tế.\\
 	\indent\textbullet\ $\varepsilon_t$: sai số ngẫu nhiên tại thời điểm t.\\
         \indent\textbullet\ $\varnothing_i$ và $\varnothing_j$ : các hệ số.\\
+\subsection{RNN}
+Mạng neural hồi quy (RNN) là một mạng neural nhân tạo được thiết kế để xử lý dữ liệu chuỗi hoặc dữ liệu có mối quan hệ thời gian. Mạng RNN có khả năng lưu trữ thông tin từ quá khứ và sử dụng nó để dự đoán các giá trị trong tương lai.
 
+Cấu trúc chính của mạng RNN là có một chuỗi các "đơn vị hồi quy" (recurrent units) được kết nối với nhau theo chiều thời gian.\\
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RNN1.png}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+
+Đối với mỗi timestep t, giá trị kích hoạt \(a^{<t>}\) và đầu ra \(y^{<t>}\) được thể hiện như sau:
+\[a^{<t>} = g_1(W_{aa}a^{<t-1>} + W_{ax}x^{<t>} + b_a)\]
+\[y^{<t>} = g_2(W_{ya}a^{<t>} + b_y)\]
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RNN2.png}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+Trong đó:\\
+	\indent\textbullet\ \(a^{<t>}\) : giá trị kích hoạt tại thời điểm t. \\
+	\indent\textbullet\ \(y^{<t>}\) : giá trị đầu ra (dự đoán) tại thời điểm t. \\
+ 	\indent\textbullet\ \(x^{<t>}\) : giá trị đầu vào tại thời điểm t. \\
+ 	\indent\textbullet\ \(g_1\), \(g_2\) : là các hàm kích hoạt (activation function). \\
+ 	\indent\textbullet\ \(g_1\), \(g_2\) : là các hàm kích hoạt (activation function). \\
+   	\indent\textbullet\ \(W_{aa}\), \(W_{ax}\), \(W_{ya}\) : lần lượt là các trọng số của giá trị kich hoạt, đầu vào và đầu ra của mô hình. \\
+   	\indent\textbullet\ \(b_a\), \(b_y\): lần lượt là các giá trị bias của mô hình. \\
+\subsection{LStM}
+Theo Alex Graves và đồng nghiệp (2005) [18] LSTM là viết tắt của "Long Short-Term Memory", một loại mạng nơ-ron học sâu hay còn được biến đến là một loại đặc biệt của mạng Recurrent Neural Network (RNN).
+
+Một LSTM layer bao gồm một tập hợp các khối nhớ được kết nối theo chu kỳ. Mỗi khối chứa một hoặc nhiều ô nhớ được kết nối theo chu kỳ thông qua ba cổng nhân tích - cổng đầu vào, cổng đầu ra và cổng quên. Chúng cung cấp các phép ghi, đọc và đặt lại liên tục cho ô nhớ.
+
+Sự ra đời của LSTM đã giúp hạn chế phần nào vấn đề phụ thuộc xa mà RNN mắc phải nhờ khả năng học các phụ th uộc dài hạn.
+
+Cấu trúc của LSTM:
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/LSTM.png}
+    \caption{Kiến trúc LSTM}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+Công thức tính toán các cổng trong LSTM:\\
+Forget gate: $f_t = \sigma(W_f \cdot x_t + U_f \cdot h_{t-1})$\\
+Input gate: $i_t = \sigma(W_i \cdot x_t + U_i \cdot h_{t-1})$\\
+Cell gate: $\tilde{c}_t = \tanh(W_c \cdot x_t + U_c \cdot h_{t-1})$\\
+Output gate: $o_t = \sigma(W_o \cdot x_t + U_o \cdot h_{t-1})$\\
+Cell state: $c_t = f_t \cdot \tilde{c}_t + i_t \cdot c_{t-1}$
+\subsection{Random Forest (RF)}
+Random Forest là một phương pháp học máy kết hợp rộng rãi được sử dụng vì tính linh hoạt, đơn giản và thường mang lại kết quả chất lượng. Về bản chất thì Random Forest là tập hợp của nhiều cây quyết định, thay vì phụ thuộc vào một cây, nó lấy dự đoán từ mỗi cây và dựa trên đa số phiếu dự đoán, dự đoán kết quả cuối cùng.
+
+Một cây quyết định được tạo thành từ ba loại nút:\\
+	\indent Nút quyết định : Loại nút này có hai nhánh trở lên. \\
+	\indent Các nút lá : Các nút thấp nhất đại diện cho quyết định. \\
+ 	\indent Nút gốc : Đây cũng là nút quyết định nhưng ở cấp cao nhất. \\
+Random Forest là một thuật toán học có giám sát có thể giải quyết cả các vấn đề phân loại và hồi quy. Random Forest sử dụng nhiều cây quyết định tổng hợp để giúp tạo ra các dự đoán ổn định và chính xác hơn. Nó hoạt động theo bốn bước:
+\\
+	\indent\textbullet\ 1.	Chọn mẫu ngẫu nhiên từ tập dữ liệu cho trước. \\
+	\indent\textbullet\ 2.	Thiết lập một cây quyết định cho mỗi mẫu và nhận kết quả dự đoán từ mỗi cây quyết định. \\
+ 	\indent\textbullet\ 3.	Sau đó, bỏ phiếu cho mỗi kết quả dự đoán. \\
+ 	\indent\textbullet\ 4.	Chọn kết quả được dự đoán nhiều nhất là kết quả dự đoán cuối cùng. \\
+Dưới đây là mô hình của Random Forest:
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RF2.png}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+
+\subsection{LightGBMModel}
+LightGBM là một thuật toán được phát triển bởi tổ chức Microsoft Research Asia dựa trên phương pháp cây quyết định tăng cường (Gradient Boosting Decision Tree (GBDT)) [26]. Một trong những ưu điểm của mô hình này là hiệu quả tính toán cao, đặc biệt đối với các bài toán dự đoán với số lượng lớn dữ liệu đầu vào. LightGBM sử dụng "histogram-based algorithms" thay thế cho "pre-sort-based algorithms" thường được dùng trong các boosting tool khác để tìm kiếm split point trong quá trình xây dựng tree. Cải tiến này giúp LightGBM tăng tốc độ training, đồng thời làm giảm bộ nhớ cần sử dụng. 
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/Level-wise Tree Growth.png}
+    \caption{Chiến lược tăng trưởng theo độ sâu của cây (Level-wise Tree Growth)}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/Trees Leaf-wise Growth Strategy.png}
+    \caption{Chiến lược tăng trưởng theo chiều lá của cây (Trees Leaf-wise Growth Strategy)}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+Chúng ta có thể xem quá trình học của thuật toán GTB như minh họa trong hình trên. Cây học sẽ được xây dựng số cây mục tiêu ngược trước. Cuối cùng thì giá trị ước lượng sẽ là $\sum f_n(x)$. Mô hình cuối cùng sẽ có dạng:
+$$
+f(x) = \sum_{i=1}^{M} (\beta_i h_i (x; \Theta_i)) = f_{M-1}(x) + \rho_M \beta_M h_M (x; \Theta_M),
+$$
+Trong đó x là mẫu và hàm $h(x; \Theta_i)$ là cây ra quyết định thứ i. Các tham số khác được tính như sau:
+\[
+\theta_m, \beta_m = \argmin_{\theta,\beta} \sum_{j=1}^{N} \left| \frac{\partial L(f_{m-1}(x_j), y_j)}{\partial f_{m-1}(x_j)} - \beta h(x_j; \theta) \right|^2
+\]
+\[
+\rho_m = \argmin_{\rho} \sum_{j=1}^{N} L(f_{m-1}(x_j) + \rho h(x_j; \theta_m), y_j)
+\]
+\subsection{ResCNN}
+Phương pháp ResCNN (Residual Convolutional Neural Network) kết hợp hai thành phần chính từ hai mô hình khác nhau: ResNet (Residual Network) và CNN (Convolutional Neural Network). Đây là một kiến trúc mạng nơ-ron sử dụng cấu trúc khối residual và các lớp tích chập để giải quyết các bài toán trong lĩnh vực thị giác máy tính, như nhận dạng hình ảnh, phân loại văn bản hình ảnh, và nhiều ứng dụng khác.
+
+Mô hình ResCNN:
+
+Đầu vào (Input): Dữ liệu hình ảnh được đưa vào mạng.
+
+Convolutional Layers (Lớp tích chập): Mỗi lớp tích chập thực hiện phép tích chập trên đầu vào để trích xuất các đặc trưng của hình ảnh.
+
+Residual Blocks (Khối Residual): Mỗi khối residual bao gồm một chuỗi các lớp tích chập được xếp chồng lên nhau. Đầu vào được truyền qua chuỗi này và sau đó cộng với đầu vào ban đầu. 
+Công thức cho một residual block có thể được mô tả như sau: 
+\[
+\text{output} = \text{ReLU}(W_2 \cdot \text{ReLU}(W_1 \cdot \text{input} + b_1) + \text{input} + b_2)
+\]
+Trong đó:\\
+        \indent\textbullet\ input là đầu vào của khối residual. \\
+	\indent\textbullet\ $W_1$ và $W_2$ là các ma trận trọng số của các lớp tích chập trong khối. \\
+ 	\indent\textbullet\ $b_1$ và $b_2$ là các ma trận trọng số của các lớp tích chập trong khối. \\
+ 	\indent\textbullet\ ReLU là hàm kích hoạt ReLU (Rectified Linear Unit). \\
+
+Pooling Layers (Lớp gộp): Các lớp gộp thường được sử dụng để giảm kích thước của không gian đặc trưng.
+
+Fully Connected Layers (Lớp kết nối đầy đủ): Các lớp kết nối đầy đủ được sử dụng để chuyển đổi biểu diễn không gian đặc trưng thành dự đoán cuối cùng.
+
+Output Layer (Lớp đầu ra): Lớp cuối cùng của mạng, thường sử dụng hàm kích hoạt phù hợp (ví dụ: softmax cho phân loại) để tạo ra dự đoán cuối cùng.
+\subsection{Fuzzy for predict times series}
+Mô hình Fuzzy time series là một khái niệm khác để giải quyết các vấn đề dự báo trong trường hợp dữ liệu lịch sử được biểu diễn dưới dạng các giá trị ngôn ngữ. Chuỗi thời gian mờ dựa trên các công trình của Zadeh , Song và Chissom , đã đầu tiên đề xuất một mô hình dự báo được gọi là Fuzzy Time Series.
+
+Trong chuỗi thời gian mờ, các giá trị được biểu diễn bằng các tập mờ được xác định trên phạm vi bài toán U, trong đó U = {$u_1$, $u_2$,...$u_n$}. Một tập mờ A có thể được biểu diễn bằng:
+\[A = \frac{f_A(u_1)}{u_1} + \frac{f_A(u_2)}{u_2} + \cdots + \frac{f_A(u_n)}{u_n}\]
+
+Trong đó, $f_A$ đề cập đến hàm thành viên của tập mờ A, $f_A$: U    ⟶ [0, 1] và $f_A(u_i)$ đại diện cho mức độ thành viên của $u_i$ thuộc tập mờ A và i = 1, 2, ... n.
+
+Definition 1: Đặt Y(t) (với t ∈ 0, 1, ...) là phạm vi bài toán bao gồm các số thực, trên đó các tập mờ $f_i(t)$ (với i ∈ 1, 2, ...) được xác định. Đặt F(t) là một tập hợp của các $f_i(t)$ (với i ∈ 1, 2, ...). Khi đó, F(t) được gọi là một chuỗi thời gian mờ được xác định trên Y(t) (với t ∈ 0, 1, ...).
+
+Definition 2: Đặt F(t) (với t ∈ 1, 2, ...) là một chuỗi thời gian mờ. Giả sử rằng tồn tại một mối quan hệ R(t − 1, t) giữa F(t) và F(t − 1) thỏa mãn F(t) = F(t − 1) ∘ R(t − 1, t), trong đó F(t) và F(t − 1) là các tập mờ và ∘ là toán tử hợp thành max-min; lúc đó, R(t − 1, t) là một mối quan hệ logic mờ được biểu thị bởi F(t − 1) ⟶ F(t).
+
+Definition 3: Giả sử F(t) phụ thuộc vào F(t − 1), F(t − 2), . . . , F(t − k), nó có thể được biểu diễn bằng một mối quan hệ logic mờ: F(t − k + 1), . . . , F(t − 1), F(t − 1) ⟶ F(t).
+
+Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước để dự đoán: (1) xác định phạm vi bài toán và chia thành các khoảng; (2) xác định các tập mờ trên phạm vi bài toán và làm mờ chuỗi thời gian; (3) xây dựng mô hình của các mối quan hệ logic mờ hiện có trong chuỗi thời gian đã được làm mờ; và (4) dự đoán và giải mã các giá trị dự đoán.
 \section{THỰC NGHIỆM}
 \subsection{THỰC NGHIỆM TRÊN BỘ BA DỮ LIỆU}
 \begin{figure}[H]
@@ -258,8 +426,8 @@ Trong đó:\\
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/ARIMA.png}
-    \caption{Kết quả thực nghiệm ARIMA}
+    \includegraphics[width=1\textwidth]{Image/ARIMA-30.png}
+    \caption{Kết quả thực nghiệm ARIMA dự đoán giá cổ phiếu trong 30 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -267,8 +435,8 @@ Trong đó:\\
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/ETS.png}
-    \caption{Kết quả thực nghiệm ETS}
+    \includegraphics[width=1\textwidth]{Image/ARIMA-60.png}
+    \caption{Kết quả thực nghiệm ARIMA dự đoán giá cổ phiếu trong 60 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -276,8 +444,8 @@ Trong đó:\\
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/meta learning.png}
-    \caption{Kết quả thực nghiệm Meta learning}
+    \includegraphics[width=1\textwidth]{Image/ARIMA-90.png}
+    \caption{Kết quả thực nghiệm ARIMA dự đoán giá cổ phiếu trong 90 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -285,11 +453,35 @@ Trong đó:\\
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/Fuzzy for predict times series.png}
-    \caption{Kết quả thực nghiệm Fuzzy for predict times series}
+    \includegraphics[width=1\textwidth]{Image/GRU-30.png}
+    \caption{Kết quả thực nghiệm GRU dự đoán giá cổ phiếu trong 30 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/GRU-60.png}
+    \caption{Kết quả thực nghiệm GRU dự đoán giá cổ phiếu trong 60 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/GRU-90.png}
+    \caption{Kết quả thực nghiệm GRU dự đoán giá cổ phiếu trong 90 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\section{KẾT LUẬN}
+Trong bài báo này, chúng tôi đã tiến hành nghiên cứu về việc sử dụng kỹ thuật phân tích chuỗi thời gian để dự đoán giá cổ phiếu. Chúng tôi đã sử dụng các mô hình như SEMOS, Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LTSM trên ba bộ dữ liệu khác nhau để đưa ra dự đoán giá cổ phiếu. Điều này giúp chúng tôi đánh giá hiệu suất và so sánh các mô hình dự đoán. Kết quả thực nghiệm cho thấy mô hình  và  đã cho thấy hiệu suất tốt hơn so với các mô hình khác trong việc dự đoán giá cổ phiếu. Điều này đều chỉ ra tiềm năng của các mô hình kỹ thuật phân tích chuỗi thời gian trong lĩnh vực dự đoán giá cổ phiếu.
+
+Mặc dù đã đạt được một số kết quả khả quan, quá trình nghiên cứu không tránh khỏi một số khó khăn. Một trong những khó khăn là tính phức tạp và biến động của thị trường tài chính, làm tăng độ khó trong việc dự đoán giá cổ phiếu. 
+
+Trong tương lai, chúng tôi sẽ tiếp tục nghiên cứu, áp dụng các kỹ thuật trong tinh chỉnh mô hình để cải tiến các mô hình dự đoán giá cổ phiếu. Ngoài ra chúng tôi có thể nghiên cứu và áp dụng các mô hình mới nhất và phát triển phương pháp kết hợp giữa các mô hình khác nhau để tăng độ chính xác và tin cậy của dự đoán. Đồng thời, mở rộng phạm vi nghiên cứu bằng cách sử dụng thêm nhiều dữ liệu từ các thị trường tài chính khác nhau như tin tức, sự kiện và thông tin khác để dự đoán chính xác hơn.
 
 \begin{thebibliography}{00}
 \bibitem{b1} Zou Xiaowu, Wang Zidong, Li Qi, Sheng Weiguo ``Integration of residual network and convolutional neural network along with various activation functions and global pooling for time series classification'' ,2019. [Online]. Link: https://www.sciencedirect.com/science/article/abs/pii/S0925231219311506
