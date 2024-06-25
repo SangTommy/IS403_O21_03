@@ -364,11 +364,11 @@ LightGBM là một thuật toán được phát triển bởi tổ chức Micros
     \label{fig:1}
     \end{minipage}
 \end{figure}
-Chúng ta có thể xem quá trình học của thuật toán GTB như minh họa trong hình trên. Cây học sẽ được xây dựng số cây mục tiêu ngược trước. Cuối cùng thì giá trị ước lượng sẽ là $\sum f_n(x)$. Mô hình cuối cùng sẽ có dạng:
-$$
-f(x) = \sum_{i=1}^{M} (\beta_i h_i (x; \Theta_i)) = f_{M-1}(x) + \rho_M \beta_M h_M (x; \Theta_M),
-$$
-Trong đó x là mẫu và hàm $h(x; \Theta_i)$ là cây ra quyết định thứ i. Các tham số khác được tính như sau:
+% Chúng ta có thể xem quá trình học của thuật toán GTB như minh họa trong hình trên. Cây học sẽ được xây dựng số cây mục tiêu ngược trước. Cuối cùng thì giá trị ước lượng sẽ là $\sum f_n(x)$. Mô hình cuối cùng sẽ có dạng:
+% $$
+% f(x) = \sum_{i=1}^{M} (\beta_i h_i (x; \Theta_i)) = f_{M-1}(x) + \rho_M \beta_M h_M (x; \Theta_M),
+% $$
+% Trong đó x là mẫu và hàm $h(x; \Theta_i)$ là cây ra quyết định thứ i. Các tham số khác được tính như sau:
 % \[
 % \theta_m, \beta_m = \argmin_{\theta,\beta} \sum_{j=1}^{N} \left| \frac{\partial L(f_{m-1}(x_j), y_j)}{\partial f_{m-1}(x_j)} - \beta h(x_j; \theta) \right|^2
 % \]
@@ -451,7 +451,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/GRU30.png}
-    \caption{Kết quả thực nghiệm GRU - trong 30 ngày}
+    \caption{Kết quả thực nghiệm GRU - 30 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -461,7 +461,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/GRU60.png}
-    \caption{Kết quả thực nghiệm GRU - trong 60 ngày}
+    \caption{Kết quả thực nghiệm GRU - 60 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -471,7 +471,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/GRU90.png}
-    \caption{Kết quả thực nghiệm GRU - trong 90 ngày}
+    \caption{Kết quả thực nghiệm GRU - 90 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -482,7 +482,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/LR30.png}
-    \caption{Kết quả thực nghiệm LINEAR REGRESSION - trong 30 ngày}
+    \caption{Kết quả thực nghiệm LINEAR REGRESSION -30 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -491,7 +491,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/LR60.png}
-    \caption{Kết quả thực nghiệm LINEAR REGRESSION - trong 60 ngày}
+    \caption{Kết quả thực nghiệm LINEAR REGRESSION - 60 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -500,7 +500,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/LR90.png}
-    \caption{Kết quả thực nghiệm LINEAR REGRESSION - trong 90 ngày}
+    \caption{Kết quả thực nghiệm LINEAR REGRESSION - 90 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -510,7 +510,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/LSTM30.png}
-    \caption{Kết quả thực nghiệm LSTM - trong 30 ngày}
+    \caption{Kết quả thực nghiệm LSTM - 30 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -519,7 +519,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/LSTM60.png}
-    \caption{Kết quả thực nghiệm LSTM- trong 60 ngày}
+    \caption{Kết quả thực nghiệm LSTM - 60 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -528,7 +528,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/LSTM90.png}
-    \caption{Kết quả thực nghiệm LSTM - trong 90 ngày}
+    \caption{Kết quả thực nghiệm LSTM - 90 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -538,7 +538,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/RNN30.png}
-    \caption{Kết quả thực nghiệm RNN - trong 30 ngày}
+    \caption{Kết quả thực nghiệm RNN - 30 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -547,7 +547,7 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/RNN60.png}
-    \caption{Kết quả thực nghiệm RNN- trong 60 ngày}
+    \caption{Kết quả thực nghiệm RNN - 60 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -556,10 +556,15 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{Image/RNN90.png}
-    \caption{Kết quả thực nghiệm RNN - trong 90 ngày}
+    \caption{Kết quả thực nghiệm RNN - 90 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
+\subsubsection{SEMOS}
+\subsubsection{RANDOM FOREST}
+\subsubsection{FUZZY FOR PREDICT TIMES SERIES}
+\subsubsection{LIGHTGBMMODEL}
+\subsubsection{RESCNN}
 \section{KẾT LUẬN}
 Trong bài báo này, chúng tôi đã tiến hành nghiên cứu về việc sử dụng kỹ thuật phân tích chuỗi thời gian để dự đoán giá cổ phiếu. Chúng tôi đã sử dụng các mô hình như SEMOS, Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LTSM trên ba bộ dữ liệu khác nhau để đưa ra dự đoán giá cổ phiếu. Điều này giúp chúng tôi đánh giá hiệu suất và so sánh các mô hình dự đoán. Kết quả thực nghiệm cho thấy mô hình  và  đã cho thấy hiệu suất tốt hơn so với các mô hình khác trong việc dự đoán giá cổ phiếu. Điều này đều chỉ ra tiềm năng của các mô hình kỹ thuật phân tích chuỗi thời gian trong lĩnh vực dự đoán giá cổ phiếu.
 

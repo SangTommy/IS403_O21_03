@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.25)  26 JUN 2024 02:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.25)  26 JUN 2024 03:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -860,10 +860,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 439--445
  []$[]$ 
  []
 
-
-
-[6 <./Image/ARIMA30.png> <./Image/ARIMA60.png>]
-<Image/GRU30.png, id=59, 1044.90375pt x 736.25063pt>
+<Image/GRU30.png, id=54, 1044.90375pt x 736.25063pt>
 File: Image/GRU30.png Graphic file (type png)
 <use Image/GRU30.png>
 Package pdftex.def Info: Image/GRU30.png  used on input line 453.
@@ -873,7 +870,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 451--457
  []$[]$ 
  []
 
-<Image/GRU60.png, id=60, 1039.63406pt x 758.08218pt>
+<Image/GRU60.png, id=55, 1039.63406pt x 758.08218pt>
 File: Image/GRU60.png Graphic file (type png)
 <use Image/GRU60.png>
 Package pdftex.def Info: Image/GRU60.png  used on input line 463.
@@ -883,7 +880,10 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 461--467
  []$[]$ 
  []
 
-<Image/GRU90.png, id=61, 1060.71281pt x 743.02594pt>
+
+
+[6 <./Image/ARIMA30.png> <./Image/ARIMA60.png> <./Image/ARIMA90.png>]
+<Image/GRU90.png, id=62, 1060.71281pt x 743.02594pt>
 File: Image/GRU90.png Graphic file (type png)
 <use Image/GRU90.png>
 Package pdftex.def Info: Image/GRU90.png  used on input line 473.
@@ -893,12 +893,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 471--477
  []$[]$ 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-<Image/LR30.png, id=62, 1405.50093pt x 607.51968pt>
+<Image/LR30.png, id=63, 1405.50093pt x 607.51968pt>
 File: Image/LR30.png Graphic file (type png)
 <use Image/LR30.png>
 Package pdftex.def Info: Image/LR30.png  used on input line 484.
@@ -908,7 +903,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 482--488
  []$[]$ 
  []
 
-<Image/LR60.png, id=63, 1411.52344pt x 601.4972pt>
+<Image/LR60.png, id=64, 1411.52344pt x 601.4972pt>
 File: Image/LR60.png Graphic file (type png)
 <use Image/LR60.png>
 Package pdftex.def Info: Image/LR60.png  used on input line 493.
@@ -918,7 +913,12 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 491--497
  []$[]$ 
  []
 
-<Image/LR90.png, id=64, 1390.44469pt x 622.57594pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+<Image/LR90.png, id=65, 1390.44469pt x 622.57594pt>
 File: Image/LR90.png Graphic file (type png)
 <use Image/LR90.png>
 Package pdftex.def Info: Image/LR90.png  used on input line 502.
@@ -928,7 +928,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 500--506
  []$[]$ 
  []
 
-<Image/LSTM30.png, id=65, 1431.09656pt x 572.89032pt>
+<Image/LSTM30.png, id=66, 1431.09656pt x 572.89032pt>
 File: Image/LSTM30.png Graphic file (type png)
 <use Image/LSTM30.png>
 Package pdftex.def Info: Image/LSTM30.png  used on input line 512.
@@ -938,7 +938,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 510--516
  []$[]$ 
  []
 
-<Image/LSTM60.png, id=66, 1431.09656pt x 560.8453pt>
+<Image/LSTM60.png, id=67, 1431.09656pt x 560.8453pt>
 File: Image/LSTM60.png Graphic file (type png)
 <use Image/LSTM60.png>
 Package pdftex.def Info: Image/LSTM60.png  used on input line 521.
@@ -948,10 +948,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 519--525
  []$[]$ 
  []
 
-
-
-[7 <./Image/ARIMA90.png> <./Image/GRU30.png> <./Image/GRU60.png> <./Image/GRU90.png> <./Image/LR30.png> <./Image/LR60.png> <./Image/LR90.png>]
-<Image/LSTM90.png, id=78, 1425.07407pt x 566.86781pt>
+<Image/LSTM90.png, id=68, 1425.07407pt x 566.86781pt>
 File: Image/LSTM90.png Graphic file (type png)
 <use Image/LSTM90.png>
 Package pdftex.def Info: Image/LSTM90.png  used on input line 530.
@@ -961,7 +958,10 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 528--534
  []$[]$ 
  []
 
-<Image/RNN30.png, id=79, 1403.99532pt x 664.73344pt>
+
+
+[7 <./Image/GRU30.png> <./Image/GRU60.png> <./Image/GRU90.png> <./Image/LR30.png> <./Image/LR60.png> <./Image/LR90.png> <./Image/LSTM30.png>]
+<Image/RNN30.png, id=80, 1403.99532pt x 664.73344pt>
 File: Image/RNN30.png Graphic file (type png)
 <use Image/RNN30.png>
 Package pdftex.def Info: Image/RNN30.png  used on input line 540.
@@ -971,7 +971,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 538--544
  []$[]$ 
  []
 
-<Image/RNN60.png, id=80, 1403.99532pt x 666.23906pt>
+<Image/RNN60.png, id=81, 1403.99532pt x 666.23906pt>
 File: Image/RNN60.png Graphic file (type png)
 <use Image/RNN60.png>
 Package pdftex.def Info: Image/RNN60.png  used on input line 549.
@@ -981,7 +981,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 547--553
  []$[]$ 
  []
 
-<Image/RNN90.png, id=81, 1400.98407pt x 660.21657pt>
+<Image/RNN90.png, id=82, 1400.98407pt x 660.21657pt>
 File: Image/RNN90.png Graphic file (type png)
 <use Image/RNN90.png>
 Package pdftex.def Info: Image/RNN90.png  used on input line 558.
@@ -992,71 +992,74 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 556--562
  []
 
 
+Underfull \vbox (badness 1997) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 []\T5/ptm/m/n/8 Zou Xi-aowu, Wang Zi-dong, Li Qi, Sheng Weiguo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 \T5/ptm/m/n/8 ``In-te-gra-tion of resid-ual net-work and con-vo-lu-tional neu-ral
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 \T5/ptm/m/n/8 net-work along with var-i-ous ac-ti-va-tion func-tions and global
  []
 
 
-Underfull \hbox (badness 7851) in paragraph at lines 571--572
+Underfull \hbox (badness 7851) in paragraph at lines 576--577
 \T5/ptm/m/n/8 pool-ing for time se-ries clas-si-fi-ca-tion'' ,2019. [On-line]. Link:
  []
 
 
-Overfull \hbox (7.256pt too wide) in paragraph at lines 571--572
+Overfull \hbox (7.256pt too wide) in paragraph at lines 576--577
 \T5/ptm/m/n/8 https://www.sciencedirect.com/science/article/abs/pii/S0925231219311506 
  []
 
 
-
-[8 <./Image/LSTM30.png> <./Image/LSTM60.png> <./Image/LSTM90.png> <./Image/RNN30.png> <./Image/RNN60.png> <./Image/RNN90.png>]
-Underfull \hbox (badness 2418) in paragraph at lines 572--573
+Underfull \hbox (badness 2418) in paragraph at lines 577--578
 \T5/ptm/m/n/8 fi-cient Gra-di-ent Boost-ing De-ci-sion Tree'' ,2017. [On-line]. Link:
  []
 
 
-Underfull \hbox (badness 3108) in paragraph at lines 573--574
+
+[8 <./Image/LSTM60.png> <./Image/LSTM90.png> <./Image/RNN30.png> <./Image/RNN60.png> <./Image/RNN90.png>]
+Underfull \hbox (badness 3108) in paragraph at lines 578--579
 []\T5/ptm/m/n/8 M¡ria Lakatos, Se-bas-tian Lerch, Stephan Hemri, S¡n-dor Baran
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 573--574
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
 \T5/ptm/m/n/8 ``Com-par-i-son of mul-ti-vari-ate post-processing meth-ods us-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 573--574
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
 \T5/ptm/m/n/8 global ECMWF en-sem-ble fore-casts'' ,2023. [On-line]. Link:
  []
 
 
-Underfull \hbox (badness 3977) in paragraph at lines 575--576
+Underfull \hbox (badness 3977) in paragraph at lines 580--581
 []\T5/ptm/m/n/8 Gang Liu, Fuyuan Xiao, ... (2020) ``A Fuzzy In-ter-val Time-
  []
 
 
-Underfull \hbox (badness 2158) in paragraph at lines 575--576
+Underfull \hbox (badness 2158) in paragraph at lines 580--581
 \T5/ptm/m/n/8 Series En-ergy and Fi-nan-cial Fore-cast-ing Model Us-ing Network-
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 575--576
+Underfull \hbox (badness 1688) in paragraph at lines 580--581
 \T5/ptm/m/n/8 Based Mul-ti-ple Time-Frequency Spaces and the Induced-Ordered
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--576
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
 \T5/ptm/m/n/8 Weighted Av-er-ag-ing Ag-gre-ga-tion Op-er-a-tion''.[Online]. Link:
  []
 
@@ -1096,7 +1099,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  57i,11n,79p,1103b,355s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmb8v.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmbi8v.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmr8v.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmri8v.pfb>
-Output written on Report.pdf (9 pages, 4886708 bytes).
+Output written on Report.pdf (9 pages, 4886000 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
