@@ -14,9 +14,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage[vietnamese]{babel}
 \usepackage{amsmath}
+\usepackage[T5]{fontenc}
+\usepackage{titlesec}
+
+\titlespacing*{\subsubsection}{0pt}{\baselineskip}{\baselineskip}
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-\documentclass{article}
 \title{Sử dụng kỹ thuật phân tích Chuỗi thời gian vào bài toán dự đoán giá Cổ phiếu}
 \author{\IEEEauthorblockN{1\textsuperscript{st} Nông Tiến Dũng}
 \IEEEauthorblockA{\textit{{IS304.O21.VN}} \\
@@ -360,17 +364,17 @@ LightGBM là một thuật toán được phát triển bởi tổ chức Micros
     \label{fig:1}
     \end{minipage}
 \end{figure}
-Chúng ta có thể xem quá trình học của thuật toán GTB như minh họa trong hình trên. Cây học sẽ được xây dựng số cây mục tiêu ngược trước. Cuối cùng thì giá trị ước lượng sẽ là $\sum f_n(x)$. Mô hình cuối cùng sẽ có dạng:
-$$
-f(x) = \sum_{i=1}^{M} (\beta_i h_i (x; \Theta_i)) = f_{M-1}(x) + \rho_M \beta_M h_M (x; \Theta_M),
-$$
-Trong đó x là mẫu và hàm $h(x; \Theta_i)$ là cây ra quyết định thứ i. Các tham số khác được tính như sau:
-\[
-\theta_m, \beta_m = \argmin_{\theta,\beta} \sum_{j=1}^{N} \left| \frac{\partial L(f_{m-1}(x_j), y_j)}{\partial f_{m-1}(x_j)} - \beta h(x_j; \theta) \right|^2
-\]
-\[
-\rho_m = \argmin_{\rho} \sum_{j=1}^{N} L(f_{m-1}(x_j) + \rho h(x_j; \theta_m), y_j)
-\]
+% Chúng ta có thể xem quá trình học của thuật toán GTB như minh họa trong hình trên. Cây học sẽ được xây dựng số cây mục tiêu ngược trước. Cuối cùng thì giá trị ước lượng sẽ là $\sum f_n(x)$. Mô hình cuối cùng sẽ có dạng:
+% $$
+% f(x) = \sum_{i=1}^{M} (\beta_i h_i (x; \Theta_i)) = f_{M-1}(x) + \rho_M \beta_M h_M (x; \Theta_M),
+% $$
+% Trong đó x là mẫu và hàm $h(x; \Theta_i)$ là cây ra quyết định thứ i. Các tham số khác được tính như sau:
+% \[
+% \theta_m, \beta_m = \argmin_{\theta,\beta} \sum_{j=1}^{N} \left| \frac{\partial L(f_{m-1}(x_j), y_j)}{\partial f_{m-1}(x_j)} - \beta h(x_j; \theta) \right|^2
+% \]
+% \[
+% \rho_m = \argmin_{\rho} \sum_{j=1}^{N} L(f_{m-1}(x_j) + \rho h(x_j; \theta_m), y_j)
+% \]
 \subsection{ResCNN}
 Phương pháp ResCNN (Residual Convolutional Neural Network) kết hợp hai thành phần chính từ hai mô hình khác nhau: ResNet (Residual Network) và CNN (Convolutional Neural Network). Đây là một kiến trúc mạng nơ-ron sử dụng cấu trúc khối residual và các lớp tích chập để giải quyết các bài toán trong lĩnh vực thị giác máy tính, như nhận dạng hình ảnh, phân loại văn bản hình ảnh, và nhiều ứng dụng khác.
 
@@ -402,23 +406,83 @@ Mô hình Fuzzy time series là một khái niệm khác để giải quyết c�
 Trong chuỗi thời gian mờ, các giá trị được biểu diễn bằng các tập mờ được xác định trên phạm vi bài toán U, trong đó U = {$u_1$, $u_2$,...$u_n$}. Một tập mờ A có thể được biểu diễn bằng:
 \[A = \frac{f_A(u_1)}{u_1} + \frac{f_A(u_2)}{u_2} + \cdots + \frac{f_A(u_n)}{u_n}\]
 
-Trong đó, $f_A$ đề cập đến hàm thành viên của tập mờ A, $f_A$: U    ⟶ [0, 1] và $f_A(u_i)$ đại diện cho mức độ thành viên của $u_i$ thuộc tập mờ A và i = 1, 2, ... n.
-
-Definition 1: Đặt Y(t) (với t ∈ 0, 1, ...) là phạm vi bài toán bao gồm các số thực, trên đó các tập mờ $f_i(t)$ (với i ∈ 1, 2, ...) được xác định. Đặt F(t) là một tập hợp của các $f_i(t)$ (với i ∈ 1, 2, ...). Khi đó, F(t) được gọi là một chuỗi thời gian mờ được xác định trên Y(t) (với t ∈ 0, 1, ...).
-
-Definition 2: Đặt F(t) (với t ∈ 1, 2, ...) là một chuỗi thời gian mờ. Giả sử rằng tồn tại một mối quan hệ R(t − 1, t) giữa F(t) và F(t − 1) thỏa mãn F(t) = F(t − 1) ∘ R(t − 1, t), trong đó F(t) và F(t − 1) là các tập mờ và ∘ là toán tử hợp thành max-min; lúc đó, R(t − 1, t) là một mối quan hệ logic mờ được biểu thị bởi F(t − 1) ⟶ F(t).
-
-Definition 3: Giả sử F(t) phụ thuộc vào F(t − 1), F(t − 2), . . . , F(t − k), nó có thể được biểu diễn bằng một mối quan hệ logic mờ: F(t − k + 1), . . . , F(t − 1), F(t − 1) ⟶ F(t).
-
+Trong đó, $f_A$ đề cập đến hàm thành viên của tập mờ A, $f_A$: U $\to$ [0, 1] và $f_A(u_i)$ đại diện cho mức độ thành viên của $u_i$ thuộc tập mờ A và i = 1, 2, ... n.
+Definition 1: Đặt Y(t) (với t $\in$ 0, 1, ...) là phạm vi bài toán bao gồm các số thực, trên đó các tập mờ $f_i(t)$ (với i $\in$ 1, 2, ...) được xác định. Đặt F(t) là một tập hợp của các $f_i(t)$ (với i $\in$ 1, 2, ...). Khi đó, F(t) được gọi là một chuỗi thời gian mờ được xác định trên Y(t) (với t $\in$ 0, 1, ...).
+Definition 2: Đặt F(t) (với t $\in$ 1, 2, ...) là một chuỗi thời gian mờ. Giả sử rằng tồn tại một mối quan hệ R(t - 1, t) giữa F(t) và F(t - 1) thỏa mãn F(t) = F(t - 1) * R(t - 1, t), trong đó F(t) và F(t - 1) là các tập mờ và là toán tử hợp thành max-min; lúc đó, R(t - 1, t) là một mối quan hệ logic mờ được biểu thị bởi F(t - 1) $\to$ F(t).
+Definition 3: Giả sử F(t) phụ thuộc vào F(t - 1), F(t - 2), . . . , F(t - k), nó có thể được biểu diễn bằng một mối quan hệ logic mờ: F(t - k + 1), . . . , F(t - 1), F(t - 1) $\to$ F(t).
 Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước để dự đoán: (1) xác định phạm vi bài toán và chia thành các khoảng; (2) xác định các tập mờ trên phạm vi bài toán và làm mờ chuỗi thời gian; (3) xây dựng mô hình của các mối quan hệ logic mờ hiện có trong chuỗi thời gian đã được làm mờ; và (4) dự đoán và giải mã các giá trị dự đoán.
 \section{THỰC NGHIỆM}
 \subsection{THỰC NGHIỆM TRÊN BỘ BA DỮ LIỆU}
+\subsubsection{ARIMA}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/LinearRegression.png}
-    \caption{Kết quả thực nghiệm Linear Regression}
+    \includegraphics[width=1\textwidth]{Image/ARIMA30.png}
+    \caption{Kết quả thực nghiệm ARIMA - 30 ngày}
+    \label{fig:arima30}
+    \end{minipage}
+\end{figure}
+\vspace{-15pt}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/ARIMA60.png}
+    \caption{Kết quả thực nghiệm ARIMA - 60 ngày}
+    \label{fig:arima60}
+    \end{minipage}
+\end{figure}
+\vspace{-10pt}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/ARIMA90.png}
+    \caption{Kết quả thực nghiệm ARIMA - trong 90 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\vspace{-20pt}
+\subsubsection{GRU}
+\vspace{-30pt}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/GRU30.png}
+    \caption{Kết quả thực nghiệm GRU - 30 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\vspace{-40pt}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/GRU60.png}
+    \caption{Kết quả thực nghiệm GRU - 60 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\vspace{-20pt}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/GRU90.png}
+    \caption{Kết quả thực nghiệm GRU - 90 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\subsubsection{LINEAR REGRESSION}
+\vspace{-15pt}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/LR30.png}
+    \caption{Kết quả thực nghiệm LINEAR REGRESSION -30 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -426,8 +490,8 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/ARIMA-30.png}
-    \caption{Kết quả thực nghiệm ARIMA dự đoán giá cổ phiếu trong 30 ngày}
+    \includegraphics[width=1\textwidth]{Image/LR60.png}
+    \caption{Kết quả thực nghiệm LINEAR REGRESSION - 60 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -435,8 +499,18 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/ARIMA-60.png}
-    \caption{Kết quả thực nghiệm ARIMA dự đoán giá cổ phiếu trong 60 ngày}
+    \includegraphics[width=1\textwidth]{Image/LR90.png}
+    \caption{Kết quả thực nghiệm LINEAR REGRESSION - 90 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\subsubsection{LSTM}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/LSTM30.png}
+    \caption{Kết quả thực nghiệm LSTM - 30 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -444,8 +518,8 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/ARIMA-90.png}
-    \caption{Kết quả thực nghiệm ARIMA dự đoán giá cổ phiếu trong 90 ngày}
+    \includegraphics[width=1\textwidth]{Image/LSTM60.png}
+    \caption{Kết quả thực nghiệm LSTM - 60 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -453,8 +527,18 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/GRU-30.png}
-    \caption{Kết quả thực nghiệm GRU dự đoán giá cổ phiếu trong 30 ngày}
+    \includegraphics[width=1\textwidth]{Image/LSTM90.png}
+    \caption{Kết quả thực nghiệm LSTM - 90 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\subsubsection{RNN}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RNN30.png}
+    \caption{Kết quả thực nghiệm RNN - 30 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -462,8 +546,8 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/GRU-60.png}
-    \caption{Kết quả thực nghiệm GRU dự đoán giá cổ phiếu trong 60 ngày}
+    \includegraphics[width=1\textwidth]{Image/RNN60.png}
+    \caption{Kết quả thực nghiệm RNN - 60 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
@@ -471,11 +555,16 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \centering
     \begin{minipage}{0.5\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{Image/GRU-90.png}
-    \caption{Kết quả thực nghiệm GRU dự đoán giá cổ phiếu trong 90 ngày}
+    \includegraphics[width=1\textwidth]{Image/RNN90.png}
+    \caption{Kết quả thực nghiệm RNN - 90 ngày}
     \label{fig:1}
     \end{minipage}
 \end{figure}
+\subsubsection{SEMOS}
+\subsubsection{RANDOM FOREST}
+\subsubsection{FUZZY FOR PREDICT TIMES SERIES}
+\subsubsection{LIGHTGBMMODEL}
+\subsubsection{RESCNN}
 \section{KẾT LUẬN}
 Trong bài báo này, chúng tôi đã tiến hành nghiên cứu về việc sử dụng kỹ thuật phân tích chuỗi thời gian để dự đoán giá cổ phiếu. Chúng tôi đã sử dụng các mô hình như SEMOS, Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LTSM trên ba bộ dữ liệu khác nhau để đưa ra dự đoán giá cổ phiếu. Điều này giúp chúng tôi đánh giá hiệu suất và so sánh các mô hình dự đoán. Kết quả thực nghiệm cho thấy mô hình  và  đã cho thấy hiệu suất tốt hơn so với các mô hình khác trong việc dự đoán giá cổ phiếu. Điều này đều chỉ ra tiềm năng của các mô hình kỹ thuật phân tích chuỗi thời gian trong lĩnh vực dự đoán giá cổ phiếu.
 
@@ -489,11 +578,11 @@ Trong tương lai, chúng tôi sẽ tiếp tục nghiên cứu, áp dụng các 
 \bibitem{b3} Mária Lakatos, Sebastian Lerch, Stephan Hemri, Sándor Baran ``Comparison of multivariate post-processing methods using global ECMWF ensemble forecasts'' ,2023. [Online]. Link: https://rmets.onlinelibrary.wiley.com/doi/full/10.1002/qj.4436
 \bibitem{b4} S. Julier and J. Uhlmann, “New extension of the Kalman filter to nonlinear systems,” Proceedings of SPIE, Jul. 1997, doi: 10.1117/12.280797.
 \bibitem{b5} Gang Liu, Fuyuan Xiao, ... (2020) ``A Fuzzy Interval Time-Series Energy and Financial Forecasting Model Using Network-Based Multiple Time-Frequency Spaces and the Induced-Ordered Weighted Averaging Aggregation Operation''.[Online]. Link: https://ieeexplore.ieee.org/abstract/document/8988162
-\bibitem{b6} Gururaj, V., Shriya, V. R., & Ashwini, K. (2019). Stock market prediction using linear regression and support vector machines. Int J Appl Eng Res, 14(8), 1931-1934.
-\bibitem{b7} Disha, R. A., & Waheed, S. (2022). Performance analysis of machine learning models for intrusion detection system using Gini Impurity-based Weighted Random Forest (GIWRF) feature selection technique. Cybersecurity, 5(1), 1-20
+\bibitem{b6} Gururaj, V., Shriya, V. R., \& Ashwini, K. (2019). Stock market prediction using linear regression and support vector machines. Int J Appl Eng Res, 14(8), 1931-1934.
+\bibitem{b7} Disha, R. A., \& Waheed, S. (2022). Performance analysis of machine learning models for intrusion detection system using Gini Impurity-based Weighted Random Forest (GIWRF) feature selection technique. Cybersecurity, 5(1), 1-20
 \bibitem{b8} A. A. Ariyo, A. O. Adewumi and C. K. Ayo, "Stock Price Prediction Using the ARIMA Model," 2014 UKSim-AMSS 16th International Conference on Computer Modelling and Simulation, Cambridge, UK, 2014, pp. 106-112, doi: 10.1109/UKSim.2014.67.
 \bibitem{b9} A. Meyler, G. Kenny and T. Quinn, “Forecasting Irish Inflation using ARIMA Models”, Central Bank of Ireland Research Department, Technical Paper, 3/RT/1998.
-\bibitem{b10} Roondiwala, M., Patel, H., & Varma, S. (2017, April). Predicting Stock Prices Using LSTM. IJSC publishing.
+\bibitem{b10} Roondiwala, M., Patel, H., \& Varma, S. (2017, April). Predicting Stock Prices Using LSTM. IJSC publishing.
 \bibitem{b11}	Yongqiong Zhu. 2020. Stock price prediction using the RNN model. 2020 International Conference on Applied Physics and Computing (ICAPC 2020). IOP Publishing.
 
 \end{thebibliography}
