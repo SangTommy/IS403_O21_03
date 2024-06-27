@@ -16,6 +16,7 @@
 \usepackage{amsmath}
 \usepackage[T5]{fontenc}
 \usepackage{titlesec}
+\usepackage{tabularx}
 
 \titlespacing*{\subsubsection}{0pt}{\baselineskip}{\baselineskip}
 
@@ -51,11 +52,17 @@
 \maketitle
 
 \begin{abstract}
-Bài báo sử dụng kỹ thuật phân tích chuỗi thời gian trong bài toán dự đoán giá cổ phiếu. Dự đoán giá cổ phiếu là một tác vụ khó khăn do tính phức tạp và biến động của thị trường tài chính. Trong bài báo, chúng tôi sử dụng các mô hình: SEMOS, Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, Autoregressive Integrated Moving Average (ARIMA), Recurrent Neural Networks (RNN), Gated recurrent units (GRU), và Long Short-Term Memory (LSTM) để dự đoán giá cổ phiếu trên ba bộ dữ liệu AbbVie, AstraZeneca và Pfizer. Sau đó thực hiện so sánh hiệu suất của các mô hình dựa trên ba độ đo: RMSE, MAE và MAPE.
+Bài báo sử dụng kỹ thuật phân tích chuỗi thời gian trong bài toán dự đoán giá cổ phiếu. 
+Dự đoán giá cổ phiếu là một tác vụ khó khăn do tính phức tạp và biến động của thị trường tài chính. 
+Trong bài báo, chúng tôi sử dụng các mô hình:
+SEMOS, Random Forest, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, 
+Autoregressive Integrated Moving Average (ARIMA), Recurrent Neural Networks (RNN), Gated recurrent units (GRU)
+và Long Short-Term Memory (LSTM) để dự đoán giá cổ phiếu trên ba bộ dữ liệu AbbVie, AstraZeneca và Pfizer. 
+Sau đó thực hiện so sánh hiệu suất của các mô hình dựa trên ba độ đo: RMSE, MSE và MAPE.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Cổ phiếu, SEMOS, Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LTSM
+Cổ phiếu, SEMOS, Random Forest, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LTSM
 \end{IEEEkeywords}
 
 \section{GIỚI THIỆU}
@@ -298,7 +305,7 @@ Trong đó:\\
  	\indent\textbullet\ \(g_1\), \(g_2\) : là các hàm kích hoạt (activation function). \\
    	\indent\textbullet\ \(W_{aa}\), \(W_{ax}\), \(W_{ya}\) : lần lượt là các trọng số của giá trị kich hoạt, đầu vào và đầu ra của mô hình. \\
    	\indent\textbullet\ \(b_a\), \(b_y\): lần lượt là các giá trị bias của mô hình. \\
-\subsection{LStM}
+\subsection{LSTM}
 Theo Alex Graves và đồng nghiệp (2005) [18] LSTM là viết tắt của "Long Short-Term Memory", một loại mạng nơ-ron học sâu hay còn được biến đến là một loại đặc biệt của mạng Recurrent Neural Network (RNN).
 
 Một LSTM layer bao gồm một tập hợp các khối nhớ được kết nối theo chu kỳ. Mỗi khối chứa một hoặc nhiều ô nhớ được kết nối theo chu kỳ thông qua ba cổng nhân tích - cổng đầu vào, cổng đầu ra và cổng quên. Chúng cung cấp các phép ghi, đọc và đặt lại liên tục cho ô nhớ.
@@ -321,7 +328,7 @@ Input gate: $i_t = \sigma(W_i \cdot x_t + U_i \cdot h_{t-1})$\\
 Cell gate: $\tilde{c}_t = \tanh(W_c \cdot x_t + U_c \cdot h_{t-1})$\\
 Output gate: $o_t = \sigma(W_o \cdot x_t + U_o \cdot h_{t-1})$\\
 Cell state: $c_t = f_t \cdot \tilde{c}_t + i_t \cdot c_{t-1}$
-\subsection{Random Forest (RF)}
+\subsection{RANDOM FOREST (RF)}
 Random Forest là một phương pháp học máy kết hợp rộng rãi được sử dụng vì tính linh hoạt, đơn giản và thường mang lại kết quả chất lượng. Về bản chất thì Random Forest là tập hợp của nhiều cây quyết định, thay vì phụ thuộc vào một cây, nó lấy dự đoán từ mỗi cây và dựa trên đa số phiếu dự đoán, dự đoán kết quả cuối cùng.
 
 Một cây quyết định được tạo thành từ ba loại nút:\\
@@ -344,7 +351,7 @@ Dưới đây là mô hình của Random Forest:
     \end{minipage}
 \end{figure}
 
-\subsection{LightGBMModel}
+\subsection{LIGHTGBMMODEL}
 LightGBM là một thuật toán được phát triển bởi tổ chức Microsoft Research Asia dựa trên phương pháp cây quyết định tăng cường (Gradient Boosting Decision Tree (GBDT)) [26]. Một trong những ưu điểm của mô hình này là hiệu quả tính toán cao, đặc biệt đối với các bài toán dự đoán với số lượng lớn dữ liệu đầu vào. LightGBM sử dụng "histogram-based algorithms" thay thế cho "pre-sort-based algorithms" thường được dùng trong các boosting tool khác để tìm kiếm split point trong quá trình xây dựng tree. Cải tiến này giúp LightGBM tăng tốc độ training, đồng thời làm giảm bộ nhớ cần sử dụng. 
 \begin{figure}[H]
     \centering
@@ -364,18 +371,19 @@ LightGBM là một thuật toán được phát triển bởi tổ chức Micros
     \label{fig:1}
     \end{minipage}
 \end{figure}
-% Chúng ta có thể xem quá trình học của thuật toán GTB như minh họa trong hình trên. Cây học sẽ được xây dựng số cây mục tiêu ngược trước. Cuối cùng thì giá trị ước lượng sẽ là $\sum f_n(x)$. Mô hình cuối cùng sẽ có dạng:
-% $$
-% f(x) = \sum_{i=1}^{M} (\beta_i h_i (x; \Theta_i)) = f_{M-1}(x) + \rho_M \beta_M h_M (x; \Theta_M),
-% $$
-% Trong đó x là mẫu và hàm $h(x; \Theta_i)$ là cây ra quyết định thứ i. Các tham số khác được tính như sau:
+Chúng ta có thể xem quá trình học của thuật toán GTB như minh họa trong hình trên. Cây học sẽ được xây dựng số cây mục tiêu ngược trước. Cuối cùng thì giá trị ước lượng sẽ là $\sum f_n(x)$. Mô hình cuối cùng sẽ có dạng:
+\[
+f(x) = \sum_{i=1}^{M} (\beta_i h_i (x; \Theta_i)) = f_{M-1}(x) + \rho_M \beta_M h_M (x; \Theta_M),
+\]
+% Trong đó $x$ là mẫu và hàm $h(x; \Theta_i)$ là cây ra quyết định thứ $i$. Các tham số khác được tính như sau:
 % \[
-% \theta_m, \beta_m = \argmin_{\theta,\beta} \sum_{j=1}^{N} \left| \frac{\partial L(f_{m-1}(x_j), y_j)}{\partial f_{m-1}(x_j)} - \beta h(x_j; \theta) \right|^2
+% \theta_M, \beta_M = \argmin_{\theta, \beta} \sum_{j=1}^{N} \left\| \frac{\partial L \left( f_{M-1}(x_j), y_j \right)}{\partial f_{M-1}(x_j)} - \beta h \left( x_j; \theta \right) \right\|^2
 % \]
+
 % \[
-% \rho_m = \argmin_{\rho} \sum_{j=1}^{N} L(f_{m-1}(x_j) + \rho h(x_j; \theta_m), y_j)
+% \rho_M = \argmin_{\rho} \sum_{j=1}^{N} L \left( f_{M-1}(x_j) + \rho h \left( x_j; \theta_M \right), y_j \right)
 % \]
-\subsection{ResCNN}
+\subsection{RESCNN}
 Phương pháp ResCNN (Residual Convolutional Neural Network) kết hợp hai thành phần chính từ hai mô hình khác nhau: ResNet (Residual Network) và CNN (Convolutional Neural Network). Đây là một kiến trúc mạng nơ-ron sử dụng cấu trúc khối residual và các lớp tích chập để giải quyết các bài toán trong lĩnh vực thị giác máy tính, như nhận dạng hình ảnh, phân loại văn bản hình ảnh, và nhiều ứng dụng khác.
 
 Mô hình ResCNN:
@@ -400,7 +408,7 @@ Pooling Layers (Lớp gộp): Các lớp gộp thường được sử dụng đ
 Fully Connected Layers (Lớp kết nối đầy đủ): Các lớp kết nối đầy đủ được sử dụng để chuyển đổi biểu diễn không gian đặc trưng thành dự đoán cuối cùng.
 
 Output Layer (Lớp đầu ra): Lớp cuối cùng của mạng, thường sử dụng hàm kích hoạt phù hợp (ví dụ: softmax cho phân loại) để tạo ra dự đoán cuối cùng.
-\subsection{Fuzzy for predict times series}
+\subsection{FUZZY FOR PREDICT TIMES SERIES}
 Mô hình Fuzzy time series là một khái niệm khác để giải quyết các vấn đề dự báo trong trường hợp dữ liệu lịch sử được biểu diễn dưới dạng các giá trị ngôn ngữ. Chuỗi thời gian mờ dựa trên các công trình của Zadeh , Song và Chissom , đã đầu tiên đề xuất một mô hình dự báo được gọi là Fuzzy Time Series.
 
 Trong chuỗi thời gian mờ, các giá trị được biểu diễn bằng các tập mờ được xác định trên phạm vi bài toán U, trong đó U = {$u_1$, $u_2$,...$u_n$}. Một tập mờ A có thể được biểu diễn bằng:
@@ -408,8 +416,11 @@ Trong chuỗi thời gian mờ, các giá trị được biểu diễn bằng c�
 
 Trong đó, $f_A$ đề cập đến hàm thành viên của tập mờ A, $f_A$: U $\to$ [0, 1] và $f_A(u_i)$ đại diện cho mức độ thành viên của $u_i$ thuộc tập mờ A và i = 1, 2, ... n.
 Definition 1: Đặt Y(t) (với t $\in$ 0, 1, ...) là phạm vi bài toán bao gồm các số thực, trên đó các tập mờ $f_i(t)$ (với i $\in$ 1, 2, ...) được xác định. Đặt F(t) là một tập hợp của các $f_i(t)$ (với i $\in$ 1, 2, ...). Khi đó, F(t) được gọi là một chuỗi thời gian mờ được xác định trên Y(t) (với t $\in$ 0, 1, ...).
+
 Definition 2: Đặt F(t) (với t $\in$ 1, 2, ...) là một chuỗi thời gian mờ. Giả sử rằng tồn tại một mối quan hệ R(t - 1, t) giữa F(t) và F(t - 1) thỏa mãn F(t) = F(t - 1) * R(t - 1, t), trong đó F(t) và F(t - 1) là các tập mờ và là toán tử hợp thành max-min; lúc đó, R(t - 1, t) là một mối quan hệ logic mờ được biểu thị bởi F(t - 1) $\to$ F(t).
+
 Definition 3: Giả sử F(t) phụ thuộc vào F(t - 1), F(t - 2), . . . , F(t - k), nó có thể được biểu diễn bằng một mối quan hệ logic mờ: F(t - k + 1), . . . , F(t - 1), F(t - 1) $\to$ F(t).
+
 Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước để dự đoán: (1) xác định phạm vi bài toán và chia thành các khoảng; (2) xác định các tập mờ trên phạm vi bài toán và làm mờ chuỗi thời gian; (3) xây dựng mô hình của các mối quan hệ logic mờ hiện có trong chuỗi thời gian đã được làm mờ; và (4) dự đoán và giải mã các giá trị dự đoán.
 \section{THỰC NGHIỆM}
 \subsection{THỰC NGHIỆM TRÊN BỘ BA DỮ LIỆU}
@@ -560,17 +571,187 @@ Mô hình Fuzzy time series sử dụng một khung khái niệm bốn bước �
     \label{fig:1}
     \end{minipage}
 \end{figure}
-\subsubsection{SEMOS}
 \subsubsection{RANDOM FOREST}
-\subsubsection{FUZZY FOR PREDICT TIMES SERIES}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RF30.jpg}
+    \caption{Kết quả thực nghiệm RANDOM FOREST - 30 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RF60.jpg}
+    \caption{Kết quả thực nghiệm RANDOM FOREST - 60 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RF90.jpg}
+    \caption{Kết quả thực nghiệm RANDOM FOREST - 90 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\subsubsection{FUZZY FOR PREDICT TIMES SERIES (FTS)}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/FTS30.png}
+    \caption{Kết quả thực nghiệm FTS - 30 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/FTS60.png}
+    \caption{Kết quả thực nghiệm FTS - 60 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/FTS90.png}
+    \caption{Kết quả thực nghiệm FTS - 90 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
 \subsubsection{LIGHTGBMMODEL}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/LIGHT30.png}
+    \caption{Kết quả thực nghiệm LIGHTGBMMODEL - 30 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/LIGHT60.png}
+    \caption{Kết quả thực nghiệm LIGHTGBMMODEL - 60 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/LIGHT90.png}
+    \caption{Kết quả thực nghiệm LIGHTGBMMODEL - 90 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
 \subsubsection{RESCNN}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RESCNN30.png}
+    \caption{Kết quả thực nghiệm RESCNN - 30 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RESCNN60.png}
+    \caption{Kết quả thực nghiệm RESCNN - 60 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{Image/RESCNN90.png}
+    \caption{Kết quả thực nghiệm RESCNN - 90 ngày}
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+Kết quả thực nghiệm sau khi thu thập được đánh giá dựa trên ba độ đo và đề cập dưới bảng sau:
+\begin{table}[H]
+    \centering
+    \caption{Đánh giá kết quả thực nghiệm}
+    \renewcommand{\arraystretch}{2}
+    \tiny
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.6cm}|>{\centering\arraybackslash}m{0.4cm}|>{\centering\arraybackslash}m{0.4cm}|>{\centering\arraybackslash}m{0.6cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|} \hline
+          \multicolumn{2}{|c|}{Dataset} & \multicolumn{3}{c|}{ABBV} & \multicolumn{3}{c|}{AZN} & \multicolumn{3}{c|}{PFE} \\ \cline{1-11}
+          \multicolumn{2}{|c|}{Tỷ lệ chia} & 8:2 & 7:3 & 6:4 & 8:2 & 7:3 & 6:4 & 8:2 & 7:3 & 6:4 \\ \hline
+         Mô hình & Độ đo & & & & & & & & & \\ \hline
+         \multirow{3}{*}{LR} & RMSE & 21,388 & 18,116 & 14,73 & 6,185 & 5,04 & 5,612 & 20,195 & 19,74 & 16,978 \\ \cline{2-11}
+         & MSE & 19,277 & 15,012 & 11,84 & 5,359 & 4,29 & 4,59 & 19,504 & 17,43 & 13,716 \\ \cline{2-11}
+         & MAPE & 0,13 & 0,1 & 0,0796 & 0,08 & 0,06 & 0,0707 & 0,653 & 0,56 & 0,433 \\ \cline{2-11} \hline
+         \multirow{3}{*}{GRU} & RMSE & 151,229 & 150,204 & 149,918 & 65,534 & 67,294 & 65,811 & 31,44 & 35,309 & 39,235 \\ \cline{2-11}
+         & MSE & 150,893 & 149,86 & 149,59 & 65,496 & 67,205 & 65,657 & 31,285 & 34,953 & 38,583 \\ \cline{2-11}
+         & MAPE & 19675,9 & 20115,857 & 20188,16 & 8691,35 & 8515,425 & 8892,012 & inf & inf & inf \\ \cline{2-11} \hline
+         \multirow{3}{*}{ARIMA} & RMSE & 15,785 & 14,413 & 35,4 & 7,419 & 10,44 & 4,84 & 7,466 & 13,15 & 13,126 \\ \cline{2-11}
+         & MSE & 12,28 & 11,25 & 32,4 & 6,638 & 9,649 & 3,549 & 6,39 & 11,569 & 10,68 \\ \cline{2-11}
+         & MAPE & 0,076 & 0,07 & 0,216 & 0,1 & 0,138 & 0,054 & 0,223 & 0,373 & 0,336 \\ \cline{2-11} \hline
+         \multirow{3}{*}{LTSM} & RMSE & 0,034 & 0,036 & 0,032 & 0,027 & 0,028 & 0,038 & 0,019 & 0,023 & 0,036 \\ \cline{2-11}
+         & MSE & 0,027 & 0,03 & 0,024 & 0,0197 & 0,0203 & 0,029 & 0,015 & 0,018 & 0,028 \\ \cline{2-11}
+         & MAPE & 0,036 & 0,038 & 0,033 & 0,027 & 0,028 & 0,043 & 47,25.$10^9$ & 7,41.$10^9$ & 28,75.$10^9$ \\ \cline{2-11} \hline
+         \multirow{3}{*}{RNN} & RMSE & 5,952 & 4,352 & 4,71 & 1,39 & 1,51 & 1,9 & 0,888 & 1,172 & 1,146 \\ \cline{2-11}
+         & MSE & 4,961 & 3,622 & 3,623 & 1,024 & 1,19 & 1,57 & 0,705 & 0,89 & 0,873 \\ \cline{2-11}
+         & MAPE & 0,031 & 0,023 & 0,024 & 0,015 & 0,017 & 0,023 & 0,022 & 0,024 & 0,022 \\ \cline{2-11} \hline
+         \multirow{3}{*}{RF} & RMSE & 7,5  & 12 & 11,4 & 1,5 & 4,8 & 3,3 & 2,1 & 1,3 & 1,9 \\ \cline{2-11}
+         & MSE & 56 & 145 & 130,4 & 2,5 & 23,4 & 11,3 & 4,6 & 1,8 & 3,6 \\ \cline{2-11}
+         & MAPE & 0,02 & 0,04 & 0,06 & 0,01 & 0,04 & 0,03 & 0,06 & 0,03 & 0,04 \\ \cline{2-11} \hline
+         \multirow{3}{*}{FTS} & RMSE & 5,875  & 5,038 & 4,088 & 2,026 & 1,968 & 1,721 & 1,604 & 1,541 & 1,840 \\ \cline{2-11}
+         & MSE & 34,52 & 25,38 & 16,71 & 4,106 & 3,874 & 2,965 & 2,572 & 2,375 & 3,386 \\ \cline{2-11}
+         & MAPE & 0,029 & 0,027 & 0,022 & 0,023 & 0,024 & 0,021 & 0,045 & 0,039 & 0,040 \\ \cline{2-11} \hline
+         \multirow{3}{*}{LightGBM} & RMSE & 5,56  & 4,42 & 5,15 & 1,66 & 1,66 & 1,73 & 2,07 & 1,61 & 1,63 \\ \cline{2-11}
+         & MSE & 4,31 & 3,38 & 4,07 & 1,28 & 1,24 & 1,32 & 1,61 & 1,23 & 1,23 \\ \cline{2-11}
+         & MAPE & 0,004 & 0,004 & 0,005 & 0,001 & 0,001 & 0,002 & 0,002 & 0,001 & 0,002 \\ \cline{2-11} \hline
+         \multirow{3}{*}{ResCNN} & RMSE & 13,6  & 13,282 & 9,785 & 6,419 & 6,35 & 10,048 & 4,038 & 3,645 & 4,272 \\ \cline{2-11}
+         & MSE & 11,78 & 11,633 & 8,38 & 5,59 & 5,218 & 9,134 & 3,336 & 2,946 & 3,499 \\ \cline{2-11}
+         & MAPE & 0,084 & 0,078 & 0,054 & 0,0896 & 0,082 & 0,159 & 0,096 & 0,074 & 0,0869 \\ \cline{2-11} \hline
+    \end{tabular}
+  \end{table}
+Bảng trên ghi nhận các giá trị độ đo RMSE, MSEM MAPE của các mô hình Random Forest (RF), Fuzzy for predict times series (FTS), 
+LightGBMModel, ResCNN, Linear regression, Autoregressive Integrated Moving Average (ARIMA), Recurrent Neural Networks (RNN), Gated recurrent units (GRU)
+và Long Short-Term Memory (LSTM) trên tập test của ba bộ dữ liệu ABBV, AZN và PFE
+theo BA tỉ lệ của train:test là 6:4 , 7:3 và 8:2
+
+Long Short-Term Memory (LSTM) là mô hình cho giá trị Root Mean Square Error (RMSE) và Mean Square Error (MSE) thấp nhất trên cả ba bộ dữ liệu 
+và cũng như với ba tỉ lệ train:test.
+
+LightGBMModel (LightGBM) đạt được giá trị Mean Absolute Percentage Error (MAPE) thấp nhất trên cả ba bộ dữ liệu và 
+cũng như với ba tỉ lệ train:test.
+
+Tổng kết lại, từ các phân tích về các độ đo lỗi như MAPE, RMSE và MSE trên cả ba bộ dữ liệu và hai tỉ lệ train:test, 
+nhóm nhận thấy hai mô hình phù hợp nhất là Long Short-Term Memory (LSTM) và LightGBMModel (LightGBM). 
+Cả hai mô hình này đã cho kết quả tốt nhất trong các độ đo lỗi khác nhau trên hầu hết ba bộ dữ liệu và các tỉ lệ train:test.
+
 \section{KẾT LUẬN}
-Trong bài báo này, chúng tôi đã tiến hành nghiên cứu về việc sử dụng kỹ thuật phân tích chuỗi thời gian để dự đoán giá cổ phiếu. Chúng tôi đã sử dụng các mô hình như SEMOS, Meta-Learning, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, ARIMA, RNN, GRU, LTSM trên ba bộ dữ liệu khác nhau để đưa ra dự đoán giá cổ phiếu. Điều này giúp chúng tôi đánh giá hiệu suất và so sánh các mô hình dự đoán. Kết quả thực nghiệm cho thấy mô hình  và  đã cho thấy hiệu suất tốt hơn so với các mô hình khác trong việc dự đoán giá cổ phiếu. Điều này đều chỉ ra tiềm năng của các mô hình kỹ thuật phân tích chuỗi thời gian trong lĩnh vực dự đoán giá cổ phiếu.
+Trong bài báo này, chúng tôi đã tiến hành nghiên cứu về việc sử dụng kỹ thuật phân tích chuỗi thời gian để dự đoán giá cổ phiếu. 
+Chúng tôi đã sử dụng các mô hình như SEMOS, Random Forest, Fuzzy for predict times series, LightGBMModel, ResCNN, Linear regression, 
+ARIMA, RNN, GRU, LTSM trên ba bộ dữ liệu khác nhau để đưa ra dự đoán giá cổ phiếu. 
+Điều này giúp chúng tôi đánh giá hiệu suất và so sánh các mô hình dự đoán. Kết quả thực nghiệm cho thấy mô hình 
+và đã cho thấy hiệu suất tốt hơn so với các mô hình khác trong việc dự đoán giá cổ phiếu. 
+Điều này đều chỉ ra tiềm năng của các mô hình kỹ thuật phân tích chuỗi thời gian trong lĩnh vực dự đoán giá cổ phiếu.
 
-Mặc dù đã đạt được một số kết quả khả quan, quá trình nghiên cứu không tránh khỏi một số khó khăn. Một trong những khó khăn là tính phức tạp và biến động của thị trường tài chính, làm tăng độ khó trong việc dự đoán giá cổ phiếu. 
+Mặc dù đã đạt được một số kết quả khả quan, quá trình nghiên cứu không tránh khỏi một số khó khăn. 
+Một trong những khó khăn là tính phức tạp và biến động của thị trường tài chính, làm tăng độ khó trong việc dự đoán giá cổ phiếu. 
 
-Trong tương lai, chúng tôi sẽ tiếp tục nghiên cứu, áp dụng các kỹ thuật trong tinh chỉnh mô hình để cải tiến các mô hình dự đoán giá cổ phiếu. Ngoài ra chúng tôi có thể nghiên cứu và áp dụng các mô hình mới nhất và phát triển phương pháp kết hợp giữa các mô hình khác nhau để tăng độ chính xác và tin cậy của dự đoán. Đồng thời, mở rộng phạm vi nghiên cứu bằng cách sử dụng thêm nhiều dữ liệu từ các thị trường tài chính khác nhau như tin tức, sự kiện và thông tin khác để dự đoán chính xác hơn.
+Trong tương lai, chúng tôi sẽ tiếp tục nghiên cứu, áp dụng các kỹ thuật trong tinh chỉnh mô hình để cải tiến các mô hình 
+dự đoán giá cổ phiếu. Ngoài ra chúng tôi có thể nghiên cứu và áp dụng các mô hình mới nhất và phát triển phương pháp kết hợp 
+giữa các mô hình khác nhau để tăng độ chính xác và tin cậy của dự đoán. Đồng thời, mở rộng phạm vi nghiên cứu bằng cách sử dụng 
+thêm nhiều dữ liệu từ các thị trường tài chính khác nhau như tin tức, sự kiện và thông tin khác để dự đoán chính xác hơn.
 
 \begin{thebibliography}{00}
 \bibitem{b1} Zou Xiaowu, Wang Zidong, Li Qi, Sheng Weiguo ``Integration of residual network and convolutional neural network along with various activation functions and global pooling for time series classification'' ,2019. [Online]. Link: https://www.sciencedirect.com/science/article/abs/pii/S0925231219311506
@@ -584,8 +765,5 @@ Trong tương lai, chúng tôi sẽ tiếp tục nghiên cứu, áp dụng các 
 \bibitem{b9} A. Meyler, G. Kenny and T. Quinn, “Forecasting Irish Inflation using ARIMA Models”, Central Bank of Ireland Research Department, Technical Paper, 3/RT/1998.
 \bibitem{b10} Roondiwala, M., Patel, H., \& Varma, S. (2017, April). Predicting Stock Prices Using LSTM. IJSC publishing.
 \bibitem{b11}	Yongqiong Zhu. 2020. Stock price prediction using the RNN model. 2020 International Conference on Applied Physics and Computing (ICAPC 2020). IOP Publishing.
-
 \end{thebibliography}
-\vspace{12pt}
-\color{red}
 \end{document}
