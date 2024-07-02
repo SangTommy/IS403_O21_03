@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.25)  3 JUL 2024 06:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.25)  3 JUL 2024 06:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1141,11 +1141,11 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 580--586
 
 
 
-<Image/SEMOS30.png, id=94, 1445.4pt x 813.0375pt>
+<Image/SEMOS30.png, id=94, 1405.50093pt x 706.89093pt>
 File: Image/SEMOS30.png Graphic file (type png)
 <use Image/SEMOS30.png>
 Package pdftex.def Info: Image/SEMOS30.png  used on input line 592.
-(pdftex.def)             Requested size: 258.0pt x 145.12465pt.
+(pdftex.def)             Requested size: 258.0pt x 129.75887pt.
 
 Overfull \hbox (6.0pt too wide) in paragraph at lines 590--596
  []$[]$ 
@@ -1182,11 +1182,8 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 618--624
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-[9 <./Image/FTS60.png (PNG copy)> <./Image/FTS90.png (PNG copy)> <./Image/LIGHT30.png> <./Image/LIGHT60.png> <./Image/LIGHT90.png> <./Image/SEMOS30.png (PNG copy)> <./Image/RESCNN30.png>]
+[9 <./Image/FTS60.png (PNG copy)> <./Image/FTS90.png (PNG copy)> <./Image/LIGHT30.png> <./Image/LIGHT60.png> <./Image/LIGHT90.png> <./Image/SEMOS30.png> <./Image/RESCNN30.png> <./Image/RESCNN60.png>]
 Overfull \hbox (6.01843pt too wide) in paragraph at lines 631--665
  [] 
  []
@@ -1239,8 +1236,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 700--701
  []
 
 
-
-[10 <./Image/RESCNN60.png> <./Image/RESCNN90.png>]
 Underfull \hbox (badness 3977) in paragraph at lines 702--703
 []\T5/ptm/m/n/8 Gang Liu, Fuyuan Xiao, ... (2020) ``A Fuzzy In-ter-val Time-
  []
@@ -1260,6 +1255,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 702--703
 \T5/ptm/m/n/8 Weighted Av-er-ag-ing Ag-gre-ga-tion Op-er-a-tion''.[Online]. Link:
  []
 
+
+
+[10 <./Image/RESCNN90.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1290,15 +1288,15 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  8251 strings out of 473919
  135027 string characters out of 5726953
- 1997908 words of memory out of 5000000
+ 1996908 words of memory out of 5000000
  30969 multiletter control sequences out of 15000+600000
  689667 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,13n,79p,1103b,362s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmb8v.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmbi8v.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmr8v.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmri8v.pfb>
-Output written on Report.pdf (11 pages, 9034018 bytes).
+Output written on Report.pdf (11 pages, 9027867 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
+ 175 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
