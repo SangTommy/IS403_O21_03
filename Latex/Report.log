@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.25)  27 JUN 2024 11:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.25)  3 JUL 2024 01:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,26 +549,54 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@delta=\dimen198
 \TX@cols=\count306
 \TX@ftn=\toks31
-) (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
+ (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks32
+\XKV@tempa@toks=\toks33
+)
+\XKV@depth=\count307
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+ (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box107
+)
+\tc@llx=\dimen199
+\tc@lly=\dimen256
+\tc@urx=\dimen257
+\tc@ury=\dimen258
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen259
+\adjbox@Height=\dimen260
+\adjbox@Depth=\dimen261
+\adjbox@Totalheight=\dimen262
+\adjbox@pwidth=\dimen263
+\adjbox@pheight=\dimen264
+\adjbox@pdepth=\dimen265
+\adjbox@ptotalheight=\dimen266
+ (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count308
+) (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box108
+\sift@deathcycles=\count309
+\@vwid@loff=\dimen267
+\@vwid@roff=\dimen268
+)) (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count307
-\l__pdf_internal_box=\box107
+\l__color_backend_stack_int=\count310
+\l__pdf_internal_box=\box109
 ) (Report.aux
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:2' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:2' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
 
 LaTeX Warning: Label `fig:1' multiply defined.
 
@@ -665,53 +693,53 @@ LaTeX Warning: Label `fig:1' multiply defined.
 )
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 51.
-LaTeX Font Info:    Trying to load font information for T5+cmr on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 52.
+LaTeX Font Info:    Trying to load font information for T5+cmr on input line 52.
  (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/vntex\t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    ... okay on input line 52.
 
 -- Lines per column: 56 (exact).
 (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count308
-\scratchdimen=\dimen199
-\scratchbox=\box108
-\nofMPsegments=\count309
-\nofMParguments=\count310
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count311
-\MPscratchDim=\dimen256
-\MPnumerator=\count312
-\makeMPintoPDFobject=\count313
-\everyMPtoPDFconversion=\toks33
+\scratchcounter=\count311
+\scratchdimen=\dimen269
+\scratchbox=\box110
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen270
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks35
 ) (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 52.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
  (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
  (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -723,185 +751,154 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 
-<Image/ABBV_Boxplot.jpg, id=9, 364.26021pt x 218.75014pt>
-File: Image/ABBV_Boxplot.jpg Graphic file (type jpg)
-<use Image/ABBV_Boxplot.jpg>
-Package pdftex.def Info: Image/ABBV_Boxplot.jpg  used on input line 142.
-(pdftex.def)             Requested size: 118.6778pt x 71.26985pt.
-<Image/ABBV_Histogram.jpg, id=10, 364.26021pt x 218.75014pt>
-File: Image/ABBV_Histogram.jpg Graphic file (type jpg)
-<use Image/ABBV_Histogram.jpg>
-Package pdftex.def Info: Image/ABBV_Histogram.jpg  used on input line 149.
-(pdftex.def)             Requested size: 118.6778pt x 71.26985pt.
-<Image/AZN_Boxplot.jpg, id=11, 364.26021pt x 218.75014pt>
-File: Image/AZN_Boxplot.jpg Graphic file (type jpg)
-<use Image/AZN_Boxplot.jpg>
-Package pdftex.def Info: Image/AZN_Boxplot.jpg  used on input line 165.
-(pdftex.def)             Requested size: 118.6778pt x 71.26985pt.
-<Image/AZN_Histogram.jpg, id=12, 364.26021pt x 218.75014pt>
-File: Image/AZN_Histogram.jpg Graphic file (type jpg)
-<use Image/AZN_Histogram.jpg>
-Package pdftex.def Info: Image/AZN_Histogram.jpg  used on input line 172.
-(pdftex.def)             Requested size: 118.6778pt x 71.26985pt.
-
-
-[2 <./Image/ABBV_Boxplot.jpg> <./Image/ABBV_Histogram.jpg>]
-<Image/PFE_Boxplot.jpg, id=16, 364.26021pt x 218.75014pt>
-File: Image/PFE_Boxplot.jpg Graphic file (type jpg)
-<use Image/PFE_Boxplot.jpg>
-Package pdftex.def Info: Image/PFE_Boxplot.jpg  used on input line 188.
-(pdftex.def)             Requested size: 118.6778pt x 71.26985pt.
-<Image/PFE_Histogram.jpg, id=17, 364.26021pt x 218.75014pt>
-File: Image/PFE_Histogram.jpg Graphic file (type jpg)
-<use Image/PFE_Histogram.jpg>
-Package pdftex.def Info: Image/PFE_Histogram.jpg  used on input line 195.
-(pdftex.def)             Requested size: 118.6778pt x 71.26985pt.
-
-
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 227.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 139.
 (C:\Users\dovan\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-[3{C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./Image/AZN_Boxplot.jpg> <./Image/AZN_Histogram.jpg> <./Image/PFE_Boxplot.jpg> <./Image/PFE_Histogram.jpg>]
-<Image/GRU.png, id=28, 148.482pt x 87.381pt>
+[2{C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+<Image/GRU.png, id=19, 148.482pt x 87.381pt>
 File: Image/GRU.png Graphic file (type png)
 <use Image/GRU.png>
-Package pdftex.def Info: Image/GRU.png  used on input line 262.
+Package pdftex.def Info: Image/GRU.png  used on input line 174.
 (pdftex.def)             Requested size: 258.0pt x 151.84435pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 260--265
+Overfull \hbox (6.0pt too wide) in paragraph at lines 172--177
  []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--275
+Underfull \hbox (badness 10000) in paragraph at lines 183--187
 
  []
 
-
-
-<Image/RNN1.png, id=30, 778.107pt x 240.9pt>
+<Image/RNN1.png, id=21, 778.107pt x 240.9pt>
 File: Image/RNN1.png Graphic file (type png)
 <use Image/RNN1.png>
-Package pdftex.def Info: Image/RNN1.png  used on input line 283.
+Package pdftex.def Info: Image/RNN1.png  used on input line 195.
 (pdftex.def)             Requested size: 258.0pt x 79.87584pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 281--286
+Overfull \hbox (6.0pt too wide) in paragraph at lines 193--198
  []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--286
+Underfull \hbox (badness 10000) in paragraph at lines 190--198
 
  []
 
-<Image/RNN2.png, id=31, 722.7pt x 361.35pt>
+
+
+[3 <./Image/GRU.png> <./Image/RNN1.png>]
+<Image/RNN2.png, id=29, 722.7pt x 361.35pt>
 File: Image/RNN2.png Graphic file (type png)
 <use Image/RNN2.png>
-Package pdftex.def Info: Image/RNN2.png  used on input line 296.
+Package pdftex.def Info: Image/RNN2.png  used on input line 208.
 (pdftex.def)             Requested size: 258.0pt x 128.9997pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 294--299
+Overfull \hbox (6.0pt too wide) in paragraph at lines 206--211
  []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--308
+Underfull \hbox (badness 10000) in paragraph at lines 212--220
 
  []
 
-
-
-[4 <./Image/GRU.png> <./Image/RNN1.png> <./Image/RNN2.png>]
-<Image/LSTM.png, id=40, 185.274pt x 95.5935pt>
+<Image/LSTM.png, id=30, 185.274pt x 95.5935pt>
 File: Image/LSTM.png Graphic file (type png)
 <use Image/LSTM.png>
-Package pdftex.def Info: Image/LSTM.png  used on input line 320.
+Package pdftex.def Info: Image/LSTM.png  used on input line 232.
 (pdftex.def)             Requested size: 258.0pt x 133.13275pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 318--324
+Overfull \hbox (6.0pt too wide) in paragraph at lines 230--236
  []$[]$ 
  []
 
-<Image/RF2.png, id=41, 176.733pt x 162.6075pt>
+
+
+<Image/RF2.png, id=31, 176.733pt x 162.6075pt>
 File: Image/RF2.png Graphic file (type png)
 <use Image/RF2.png>
-Package pdftex.def Info: Image/RF2.png  used on input line 349.
+Package pdftex.def Info: Image/RF2.png  used on input line 279.
 (pdftex.def)             Requested size: 258.0pt x 237.39752pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 347--352
+Overfull \hbox (6.0pt too wide) in paragraph at lines 277--282
  []$[]$ 
  []
 
 
 
-<Image/Level-wise Tree Growth.png, id=42, 507.69675pt x 150.5625pt>
+[4 <./Image/RNN2.png> <./Image/LSTM.png>]
+<Image/Level-wise Tree Growth.png, id=37, 507.69675pt x 150.5625pt>
 File: Image/Level-wise Tree Growth.png Graphic file (type png)
 <use Image/Level-wise Tree Growth.png>
-Package pdftex.def Info: Image/Level-wise Tree Growth.png  used on input line 360.
+Package pdftex.def Info: Image/Level-wise Tree Growth.png  used on input line 290.
 (pdftex.def)             Requested size: 258.0pt x 76.51245pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 358--364
+Overfull \hbox (6.0pt too wide) in paragraph at lines 288--294
  []$[]$ 
  []
 
-<Image/Trees Leaf-wise Growth Strategy.png, id=43, 561.89925pt x 163.812pt>
+<Image/Trees Leaf-wise Growth Strategy.png, id=38, 561.89925pt x 163.812pt>
 File: Image/Trees Leaf-wise Growth Strategy.png Graphic file (type png)
 <use Image/Trees Leaf-wise Growth Strategy.png>
-Package pdftex.def Info: Image/Trees Leaf-wise Growth Strategy.png  used on input line 369.
+Package pdftex.def Info: Image/Trees Leaf-wise Growth Strategy.png  used on input line 299.
 (pdftex.def)             Requested size: 258.0pt x 75.21695pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 367--373
+Overfull \hbox (6.0pt too wide) in paragraph at lines 297--303
  []$[]$ 
  []
 
 
 
-[5 <./Image/LSTM.png> <./Image/RF2.png> <./Image/Level-wise Tree Growth.png> <./Image/Trees Leaf-wise Growth Strategy.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 399--405
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--335
 
  []
 
 
 
-<Image/ARIMA30.png, id=51, 1407.75937pt x 548.0475pt>
+[5 <./Image/RF2.png> <./Image/Level-wise Tree Growth.png> <./Image/Trees Leaf-wise Growth Strategy.png>]
+<Image/ARIMA30.png, id=45, 1407.75937pt x 548.0475pt>
 File: Image/ARIMA30.png Graphic file (type png)
 <use Image/ARIMA30.png>
-Package pdftex.def Info: Image/ARIMA30.png  used on input line 432.
+Package pdftex.def Info: Image/ARIMA30.png  used on input line 361.
 (pdftex.def)             Requested size: 258.0pt x 100.43387pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 430--436
+Overfull \hbox (6.0pt too wide) in paragraph at lines 359--365
  []$[]$ 
  []
 
-<Image/ARIMA60.png, id=52, 1402.48969pt x 574.39594pt>
+<Image/ARIMA60.png, id=46, 1402.48969pt x 574.39594pt>
 File: Image/ARIMA60.png Graphic file (type png)
 <use Image/ARIMA60.png>
-Package pdftex.def Info: Image/ARIMA60.png  used on input line 442.
+Package pdftex.def Info: Image/ARIMA60.png  used on input line 371.
 (pdftex.def)             Requested size: 258.0pt x 105.66559pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 440--446
+Overfull \hbox (6.0pt too wide) in paragraph at lines 369--375
  []$[]$ 
  []
 
-<Image/ARIMA90.png, id=53, 1351.29843pt x 542.77782pt>
+<Image/ARIMA90.png, id=47, 1351.29843pt x 542.77782pt>
 File: Image/ARIMA90.png Graphic file (type png)
 <use Image/ARIMA90.png>
-Package pdftex.def Info: Image/ARIMA90.png  used on input line 452.
+Package pdftex.def Info: Image/ARIMA90.png  used on input line 381.
 (pdftex.def)             Requested size: 258.0pt x 103.62578pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 450--456
+Overfull \hbox (6.0pt too wide) in paragraph at lines 379--385
  []$[]$ 
  []
 
@@ -910,34 +907,33 @@ Underfull \vbox (badness 1389) has occurred while \output is active []
 
 
 
-[6 <./Image/ARIMA30.png> <./Image/ARIMA60.png>]
-<Image/GRU30.png, id=59, 1044.90375pt x 736.25063pt>
+<Image/GRU30.png, id=48, 1044.90375pt x 736.25063pt>
 File: Image/GRU30.png Graphic file (type png)
 <use Image/GRU30.png>
-Package pdftex.def Info: Image/GRU30.png  used on input line 464.
+Package pdftex.def Info: Image/GRU30.png  used on input line 393.
 (pdftex.def)             Requested size: 258.0pt x 181.79288pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 462--468
+Overfull \hbox (6.0pt too wide) in paragraph at lines 391--397
  []$[]$ 
  []
 
-<Image/GRU60.png, id=60, 1039.63406pt x 758.08218pt>
+<Image/GRU60.png, id=49, 1039.63406pt x 758.08218pt>
 File: Image/GRU60.png Graphic file (type png)
 <use Image/GRU60.png>
-Package pdftex.def Info: Image/GRU60.png  used on input line 474.
+Package pdftex.def Info: Image/GRU60.png  used on input line 403.
 (pdftex.def)             Requested size: 258.0pt x 188.12042pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 472--478
+Overfull \hbox (6.0pt too wide) in paragraph at lines 401--407
  []$[]$ 
  []
 
-<Image/GRU90.png, id=61, 1060.71281pt x 743.02594pt>
+<Image/GRU90.png, id=50, 1060.71281pt x 743.02594pt>
 File: Image/GRU90.png Graphic file (type png)
 <use Image/GRU90.png>
-Package pdftex.def Info: Image/GRU90.png  used on input line 484.
+Package pdftex.def Info: Image/GRU90.png  used on input line 413.
 (pdftex.def)             Requested size: 258.0pt x 180.7221pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 482--488
+Overfull \hbox (6.0pt too wide) in paragraph at lines 411--417
  []$[]$ 
  []
 
@@ -946,128 +942,129 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-<Image/LR30.png, id=62, 1405.50093pt x 607.51968pt>
+[6 <./Image/ARIMA30.png> <./Image/ARIMA60.png> <./Image/ARIMA90.png> <./Image/GRU30.png> <./Image/GRU60.png>]
+<Image/LR30.png, id=59, 1405.50093pt x 607.51968pt>
 File: Image/LR30.png Graphic file (type png)
 <use Image/LR30.png>
-Package pdftex.def Info: Image/LR30.png  used on input line 495.
+Package pdftex.def Info: Image/LR30.png  used on input line 424.
 (pdftex.def)             Requested size: 258.0pt x 111.51799pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 493--499
+Overfull \hbox (6.0pt too wide) in paragraph at lines 422--428
  []$[]$ 
  []
 
-<Image/LR60.png, id=63, 1411.52344pt x 601.4972pt>
+<Image/LR60.png, id=60, 1411.52344pt x 601.4972pt>
 File: Image/LR60.png Graphic file (type png)
 <use Image/LR60.png>
-Package pdftex.def Info: Image/LR60.png  used on input line 504.
+Package pdftex.def Info: Image/LR60.png  used on input line 433.
 (pdftex.def)             Requested size: 258.0pt x 109.93523pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 502--508
+Overfull \hbox (6.0pt too wide) in paragraph at lines 431--437
  []$[]$ 
  []
 
-<Image/LR90.png, id=64, 1390.44469pt x 622.57594pt>
+<Image/LR90.png, id=61, 1390.44469pt x 622.57594pt>
 File: Image/LR90.png Graphic file (type png)
 <use Image/LR90.png>
-Package pdftex.def Info: Image/LR90.png  used on input line 513.
+Package pdftex.def Info: Image/LR90.png  used on input line 442.
 (pdftex.def)             Requested size: 258.0pt x 115.51672pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 511--517
+Overfull \hbox (6.0pt too wide) in paragraph at lines 440--446
  []$[]$ 
  []
 
-<Image/LSTM30.png, id=65, 1431.09656pt x 572.89032pt>
+<Image/LSTM30.png, id=62, 1431.09656pt x 572.89032pt>
 File: Image/LSTM30.png Graphic file (type png)
 <use Image/LSTM30.png>
-Package pdftex.def Info: Image/LSTM30.png  used on input line 523.
+Package pdftex.def Info: Image/LSTM30.png  used on input line 452.
 (pdftex.def)             Requested size: 258.0pt x 103.28189pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 521--527
+Overfull \hbox (6.0pt too wide) in paragraph at lines 450--456
  []$[]$ 
  []
 
-<Image/LSTM60.png, id=66, 1431.09656pt x 560.8453pt>
+<Image/LSTM60.png, id=63, 1431.09656pt x 560.8453pt>
 File: Image/LSTM60.png Graphic file (type png)
 <use Image/LSTM60.png>
-Package pdftex.def Info: Image/LSTM60.png  used on input line 532.
+Package pdftex.def Info: Image/LSTM60.png  used on input line 461.
 (pdftex.def)             Requested size: 258.0pt x 101.1104pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 530--536
+Overfull \hbox (6.0pt too wide) in paragraph at lines 459--465
  []$[]$ 
  []
 
 
 
-[7 <./Image/ARIMA90.png> <./Image/GRU30.png> <./Image/GRU60.png> <./Image/GRU90.png> <./Image/LR30.png> <./Image/LR60.png> <./Image/LR90.png>]
-<Image/LSTM90.png, id=78, 1425.07407pt x 566.86781pt>
+<Image/LSTM90.png, id=64, 1425.07407pt x 566.86781pt>
 File: Image/LSTM90.png Graphic file (type png)
 <use Image/LSTM90.png>
-Package pdftex.def Info: Image/LSTM90.png  used on input line 541.
+Package pdftex.def Info: Image/LSTM90.png  used on input line 470.
 (pdftex.def)             Requested size: 258.0pt x 102.61998pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 539--545
+Overfull \hbox (6.0pt too wide) in paragraph at lines 468--474
  []$[]$ 
  []
 
-<Image/RNN30.png, id=79, 1403.99532pt x 664.73344pt>
+<Image/RNN30.png, id=65, 1403.99532pt x 664.73344pt>
 File: Image/RNN30.png Graphic file (type png)
 <use Image/RNN30.png>
-Package pdftex.def Info: Image/RNN30.png  used on input line 551.
+Package pdftex.def Info: Image/RNN30.png  used on input line 480.
 (pdftex.def)             Requested size: 258.0pt x 122.15218pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 549--555
+Overfull \hbox (6.0pt too wide) in paragraph at lines 478--484
  []$[]$ 
  []
 
-<Image/RNN60.png, id=80, 1403.99532pt x 666.23906pt>
+<Image/RNN60.png, id=66, 1403.99532pt x 666.23906pt>
 File: Image/RNN60.png Graphic file (type png)
 <use Image/RNN60.png>
-Package pdftex.def Info: Image/RNN60.png  used on input line 560.
+Package pdftex.def Info: Image/RNN60.png  used on input line 489.
 (pdftex.def)             Requested size: 258.0pt x 122.42885pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 558--564
+Overfull \hbox (6.0pt too wide) in paragraph at lines 487--493
  []$[]$ 
  []
 
-<Image/RNN90.png, id=81, 1400.98407pt x 660.21657pt>
+<Image/RNN90.png, id=67, 1400.98407pt x 660.21657pt>
 File: Image/RNN90.png Graphic file (type png)
 <use Image/RNN90.png>
-Package pdftex.def Info: Image/RNN90.png  used on input line 569.
+Package pdftex.def Info: Image/RNN90.png  used on input line 498.
 (pdftex.def)             Requested size: 258.0pt x 121.574pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 567--573
+Overfull \hbox (6.0pt too wide) in paragraph at lines 496--502
  []$[]$ 
  []
 
 
 
-<Image/RF30.jpg, id=82, 1535.7375pt x 1083.04625pt>
+[7 <./Image/GRU90.png> <./Image/LR30.png> <./Image/LR60.png> <./Image/LR90.png> <./Image/LSTM30.png> <./Image/LSTM60.png> <./Image/LSTM90.png> <./Image/RNN30.png>]
+<Image/RF30.jpg, id=80, 1535.7375pt x 1083.04625pt>
 File: Image/RF30.jpg Graphic file (type jpg)
 <use Image/RF30.jpg>
-Package pdftex.def Info: Image/RF30.jpg  used on input line 579.
+Package pdftex.def Info: Image/RF30.jpg  used on input line 508.
 (pdftex.def)             Requested size: 258.0pt x 181.95053pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 577--583
+Overfull \hbox (6.0pt too wide) in paragraph at lines 506--512
  []$[]$ 
  []
 
-<Image/RF60.jpg, id=83, 1491.5725pt x 1071.00125pt>
+<Image/RF60.jpg, id=81, 1491.5725pt x 1071.00125pt>
 File: Image/RF60.jpg Graphic file (type jpg)
 <use Image/RF60.jpg>
-Package pdftex.def Info: Image/RF60.jpg  used on input line 588.
+Package pdftex.def Info: Image/RF60.jpg  used on input line 517.
 (pdftex.def)             Requested size: 258.0pt x 185.23817pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 586--592
+Overfull \hbox (6.0pt too wide) in paragraph at lines 515--521
  []$[]$ 
  []
 
-<Image/RF90.jpg, id=84, 1514.65875pt x 1091.07625pt>
+<Image/RF90.jpg, id=82, 1514.65875pt x 1091.07625pt>
 File: Image/RF90.jpg Graphic file (type jpg)
 <use Image/RF90.jpg>
-Package pdftex.def Info: Image/RF90.jpg  used on input line 597.
+Package pdftex.def Info: Image/RF90.jpg  used on input line 526.
 (pdftex.def)             Requested size: 258.0pt x 185.84677pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 595--601
+Overfull \hbox (6.0pt too wide) in paragraph at lines 524--530
  []$[]$ 
  []
 
@@ -1076,352 +1073,174 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[8 <./Image/LSTM30.png> <./Image/LSTM60.png> <./Image/LSTM90.png> <./Image/RNN30.png> <./Image/RNN60.png> <./Image/RNN90.png> <./Image/RF30.jpg>]
-<Image/FTS30.png, id=94, 1445.4pt x 813.0375pt>
+<Image/FTS30.png, id=83, 1445.4pt x 813.0375pt>
 File: Image/FTS30.png Graphic file (type png)
 <use Image/FTS30.png>
-Package pdftex.def Info: Image/FTS30.png  used on input line 607.
+Package pdftex.def Info: Image/FTS30.png  used on input line 536.
 (pdftex.def)             Requested size: 258.0pt x 145.12465pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 605--611
+Overfull \hbox (6.0pt too wide) in paragraph at lines 534--540
  []$[]$ 
  []
 
-<Image/FTS60.png, id=95, 1445.4pt x 813.0375pt>
+<Image/FTS60.png, id=84, 1445.4pt x 813.0375pt>
 File: Image/FTS60.png Graphic file (type png)
 <use Image/FTS60.png>
-Package pdftex.def Info: Image/FTS60.png  used on input line 616.
+Package pdftex.def Info: Image/FTS60.png  used on input line 545.
 (pdftex.def)             Requested size: 258.0pt x 145.12465pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 614--620
+Overfull \hbox (6.0pt too wide) in paragraph at lines 543--549
  []$[]$ 
  []
 
-<Image/FTS90.png, id=96, 1445.4pt x 813.0375pt>
+<Image/FTS90.png, id=85, 1445.4pt x 813.0375pt>
 File: Image/FTS90.png Graphic file (type png)
 <use Image/FTS90.png>
-Package pdftex.def Info: Image/FTS90.png  used on input line 625.
+Package pdftex.def Info: Image/FTS90.png  used on input line 554.
 (pdftex.def)             Requested size: 258.0pt x 145.12465pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 623--629
+Overfull \hbox (6.0pt too wide) in paragraph at lines 552--558
  []$[]$ 
  []
 
 
 
-<Image/LIGHT30.png, id=97, 1434.10782pt x 497.60907pt>
+[8 <./Image/RNN60.png> <./Image/RNN90.png> <./Image/RF30.jpg> <./Image/RF60.jpg> <./Image/RF90.jpg> <./Image/FTS30.png (PNG copy)>]
+<Image/LIGHT30.png, id=91, 1434.10782pt x 497.60907pt>
 File: Image/LIGHT30.png Graphic file (type png)
 <use Image/LIGHT30.png>
-Package pdftex.def Info: Image/LIGHT30.png  used on input line 635.
+Package pdftex.def Info: Image/LIGHT30.png  used on input line 564.
 (pdftex.def)             Requested size: 258.0pt x 89.5202pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 633--639
+Overfull \hbox (6.0pt too wide) in paragraph at lines 562--568
  []$[]$ 
  []
 
-<Image/LIGHT60.png, id=98, 1426.57968pt x 506.6428pt>
+<Image/LIGHT60.png, id=92, 1426.57968pt x 506.6428pt>
 File: Image/LIGHT60.png Graphic file (type png)
 <use Image/LIGHT60.png>
-Package pdftex.def Info: Image/LIGHT60.png  used on input line 644.
+Package pdftex.def Info: Image/LIGHT60.png  used on input line 573.
 (pdftex.def)             Requested size: 258.0pt x 91.62468pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 642--648
+Overfull \hbox (6.0pt too wide) in paragraph at lines 571--577
  []$[]$ 
  []
 
-<Image/LIGHT90.png, id=99, 1435.61343pt x 530.73282pt>
+<Image/LIGHT90.png, id=93, 1435.61343pt x 530.73282pt>
 File: Image/LIGHT90.png Graphic file (type png)
 <use Image/LIGHT90.png>
-Package pdftex.def Info: Image/LIGHT90.png  used on input line 653.
+Package pdftex.def Info: Image/LIGHT90.png  used on input line 582.
 (pdftex.def)             Requested size: 258.0pt x 95.37392pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 651--657
+Overfull \hbox (6.0pt too wide) in paragraph at lines 580--586
  []$[]$ 
  []
 
 
 
-[9 <./Image/RF60.jpg> <./Image/RF90.jpg> <./Image/FTS30.png (PNG copy)> <./Image/FTS60.png (PNG copy)> <./Image/FTS90.png (PNG copy)> <./Image/LIGHT30.png> <./Image/LIGHT60.png>]
-<Image/RESCNN30.png, id=105, 1438.6247pt x 681.29532pt>
+<Image/RESCNN30.png, id=94, 1438.6247pt x 681.29532pt>
 File: Image/RESCNN30.png Graphic file (type png)
 <use Image/RESCNN30.png>
-Package pdftex.def Info: Image/RESCNN30.png  used on input line 663.
+Package pdftex.def Info: Image/RESCNN30.png  used on input line 592.
 (pdftex.def)             Requested size: 258.0pt x 122.18085pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 661--667
+Overfull \hbox (6.0pt too wide) in paragraph at lines 590--596
  []$[]$ 
  []
 
-<Image/RESCNN60.png, id=106, 1393.45593pt x 702.37407pt>
+<Image/RESCNN60.png, id=95, 1393.45593pt x 702.37407pt>
 File: Image/RESCNN60.png Graphic file (type png)
 <use Image/RESCNN60.png>
-Package pdftex.def Info: Image/RESCNN60.png  used on input line 672.
+Package pdftex.def Info: Image/RESCNN60.png  used on input line 601.
 (pdftex.def)             Requested size: 258.0pt x 130.04434pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 670--676
+Overfull \hbox (6.0pt too wide) in paragraph at lines 599--605
  []$[]$ 
  []
 
-<Image/RESCNN90.png, id=107, 1388.93906pt x 697.8572pt>
+<Image/RESCNN90.png, id=96, 1388.93906pt x 697.8572pt>
 File: Image/RESCNN90.png Graphic file (type png)
 <use Image/RESCNN90.png>
-Package pdftex.def Info: Image/RESCNN90.png  used on input line 681.
+Package pdftex.def Info: Image/RESCNN90.png  used on input line 610.
 (pdftex.def)             Requested size: 258.0pt x 129.62332pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 679--685
+Overfull \hbox (6.0pt too wide) in paragraph at lines 608--614
  []$[]$ 
  []
 
 
-Overfull \hbox (2.23405pt too wide) in paragraph at lines 696--696
- []|\T5/ptm/m/n/5 RMSE| 
- []
-
-
-Overfull \hbox (2.36908pt too wide) in paragraph at lines 696--696
- []|\T5/ptm/m/n/5 21,388| 
- []
-
-
-Overfull \hbox (2.36908pt too wide) in paragraph at lines 697--697
- []|\T5/ptm/m/n/5 19,277| 
- []
-
-
-Overfull \hbox (2.50906pt too wide) in paragraph at lines 698--698
- []|\T5/ptm/m/n/5 MAPE| 
- []
-
-
-Overfull \hbox (2.23405pt too wide) in paragraph at lines 699--699
- []|\T5/ptm/m/n/5 RMSE| 
- []
-
-
-Overfull \hbox (4.86908pt too wide) in paragraph at lines 699--699
- []|\T5/ptm/m/n/5 151,229| 
- []
-
-
-Overfull \hbox (2.02364pt too wide) in paragraph at lines 699--699
- []|\T5/ptm/m/n/5 149,918| 
- []
-
-
-Overfull \hbox (4.86908pt too wide) in paragraph at lines 700--700
- []|\T5/ptm/m/n/5 150,893| 
- []
-
-
-Overfull \hbox (2.50906pt too wide) in paragraph at lines 701--701
- []|\T5/ptm/m/n/5 MAPE| 
- []
-
-
-Overfull \hbox (4.86908pt too wide) in paragraph at lines 701--701
- []|\T5/ptm/m/n/5 19675,9| 
- []
-
-
-Overfull \hbox (4.17818pt too wide) in paragraph at lines 701--701
- []|\T5/ptm/m/n/5 20115,857| 
- []
-
-
-Overfull \hbox (4.52364pt too wide) in paragraph at lines 701--701
- []|\T5/ptm/m/n/5 20188,16| 
- []
-
-
-Overfull \hbox (2.02364pt too wide) in paragraph at lines 701--701
- []|\T5/ptm/m/n/5 8691,35| 
- []
-
-
-Overfull \hbox (4.52364pt too wide) in paragraph at lines 701--701
- []|\T5/ptm/m/n/5 8515,425| 
- []
-
-
-Overfull \hbox (4.52364pt too wide) in paragraph at lines 701--701
- []|\T5/ptm/m/n/5 8892,012| 
- []
-
-
-Overfull \hbox (2.23405pt too wide) in paragraph at lines 702--702
- []|\T5/ptm/m/n/5 RMSE| 
- []
-
-
-Overfull \hbox (2.36908pt too wide) in paragraph at lines 702--702
- []|\T5/ptm/m/n/5 15,785| 
- []
-
-
-Overfull \hbox (2.50906pt too wide) in paragraph at lines 704--704
- []|\T5/ptm/m/n/5 MAPE| 
- []
-
-
-Overfull \hbox (2.23405pt too wide) in paragraph at lines 705--705
- []|\T5/ptm/m/n/5 RMSE| 
- []
-
-
-Overfull \hbox (2.50906pt too wide) in paragraph at lines 707--707
- []|\T5/ptm/m/n/5 MAPE| 
- []
-
-
-Overfull \hbox (8.98213pt too wide) in paragraph at lines 707--707
- []|\T5/ptm/m/n/5 47,25.$\OT1/cmr/m/n/5 10[]$| 
- []
-
-
-Overfull \hbox (6.48213pt too wide) in paragraph at lines 707--707
- []|\T5/ptm/m/n/5 7,41.$\OT1/cmr/m/n/5 10[]$| 
- []
-
-
-Overfull \hbox (8.98213pt too wide) in paragraph at lines 707--707
- []|\T5/ptm/m/n/5 28,75.$\OT1/cmr/m/n/5 10[]$| 
- []
-
-
-Overfull \hbox (2.23405pt too wide) in paragraph at lines 708--708
- []|\T5/ptm/m/n/5 RMSE| 
- []
-
-
-Overfull \hbox (2.50906pt too wide) in paragraph at lines 710--710
- []|\T5/ptm/m/n/5 MAPE| 
- []
-
-
-Overfull \hbox (2.23405pt too wide) in paragraph at lines 711--711
- []|\T5/ptm/m/n/5 RMSE| 
- []
-
-
-Overfull \hbox (2.50906pt too wide) in paragraph at lines 713--713
- []|\T5/ptm/m/n/5 MAPE| 
- []
-
-
-Overfull \hbox (2.23405pt too wide) in paragraph at lines 714--714
- []|\T5/ptm/m/n/5 RMSE| 
- []
-
-
-Overfull \hbox (2.50906pt too wide) in paragraph at lines 716--716
- []|\T5/ptm/m/n/5 MAPE| 
- []
-
-
-Overfull \hbox (5.15315pt too wide) in paragraph at lines 717--717
- []|[]| 
- []
-
-
-Overfull \hbox (2.23405pt too wide) in paragraph at lines 717--717
- []|\T5/ptm/m/n/5 RMSE| 
- []
-
-
-Overfull \hbox (2.50906pt too wide) in paragraph at lines 719--719
- []|\T5/ptm/m/n/5 MAPE| 
- []
-
-
-Overfull \hbox (0.86815pt too wide) in paragraph at lines 720--720
- []|[]| 
- []
-
-
-Overfull \hbox (2.23405pt too wide) in paragraph at lines 720--720
- []|\T5/ptm/m/n/5 RMSE| 
- []
-
-
-Overfull \hbox (2.50906pt too wide) in paragraph at lines 722--722
- []|\T5/ptm/m/n/5 MAPE| 
- []
-
-
-Overfull \hbox (41.28996pt too wide) in paragraph at lines 692--724
- [][] 
+Overfull \hbox (6.01843pt too wide) in paragraph at lines 621--655
+ [] 
  []
 
 
 
+[9 <./Image/FTS60.png (PNG copy)> <./Image/FTS90.png (PNG copy)> <./Image/LIGHT30.png> <./Image/LIGHT60.png> <./Image/LIGHT90.png> <./Image/RESCNN30.png> <./Image/RESCNN60.png> <./Image/RESCNN90.png>]
 
 
-[10 <./Image/LIGHT90.png> <./Image/RESCNN30.png> <./Image/RESCNN60.png> <./Image/RESCNN90.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 []\T5/ptm/m/n/8 Zou Xi-aowu, Wang Zi-dong, Li Qi, Sheng Weiguo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 \T5/ptm/m/n/8 ``In-te-gra-tion of resid-ual net-work and con-vo-lu-tional neu-ral
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 \T5/ptm/m/n/8 net-work along with var-i-ous ac-ti-va-tion func-tions and global
  []
 
 
-Underfull \hbox (badness 7851) in paragraph at lines 757--758
+Underfull \hbox (badness 7851) in paragraph at lines 688--689
 \T5/ptm/m/n/8 pool-ing for time se-ries clas-si-fi-ca-tion'' ,2019. [On-line]. Link:
  []
 
 
-Overfull \hbox (7.256pt too wide) in paragraph at lines 757--758
+Overfull \hbox (7.256pt too wide) in paragraph at lines 688--689
 \T5/ptm/m/n/8 https://www.sciencedirect.com/science/article/abs/pii/S0925231219311506 
  []
 
 
-Underfull \hbox (badness 2418) in paragraph at lines 758--759
+Underfull \hbox (badness 2418) in paragraph at lines 689--690
 \T5/ptm/m/n/8 fi-cient Gra-di-ent Boost-ing De-ci-sion Tree'' ,2017. [On-line]. Link:
  []
 
 
-Underfull \hbox (badness 3108) in paragraph at lines 759--760
+Underfull \hbox (badness 3108) in paragraph at lines 690--691
 []\T5/ptm/m/n/8 M¡ria Lakatos, Se-bas-tian Lerch, Stephan Hemri, S¡n-dor Baran
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 759--760
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
 \T5/ptm/m/n/8 ``Com-par-i-son of mul-ti-vari-ate post-processing meth-ods us-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 759--760
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
 \T5/ptm/m/n/8 global ECMWF en-sem-ble fore-casts'' ,2023. [On-line]. Link:
  []
 
 
-Underfull \hbox (badness 3977) in paragraph at lines 761--762
+Underfull \hbox (badness 3977) in paragraph at lines 692--693
 []\T5/ptm/m/n/8 Gang Liu, Fuyuan Xiao, ... (2020) ``A Fuzzy In-ter-val Time-
  []
 
 
-Underfull \hbox (badness 2158) in paragraph at lines 761--762
+Underfull \hbox (badness 2158) in paragraph at lines 692--693
 \T5/ptm/m/n/8 Series En-ergy and Fi-nan-cial Fore-cast-ing Model Us-ing Network-
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 761--762
+Underfull \hbox (badness 1688) in paragraph at lines 692--693
 \T5/ptm/m/n/8 Based Mul-ti-ple Time-Frequency Spaces and the Induced-Ordered
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 761--762
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \T5/ptm/m/n/8 Weighted Av-er-ag-ing Ag-gre-ga-tion Op-er-a-tion''.[Online]. Link:
  []
-
-
 
 
 ** Conference Paper **
@@ -1436,7 +1255,7 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-[11] (Report.aux)
+[10] (Report.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
@@ -1447,17 +1266,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7174 strings out of 473919
- 115826 string characters out of 5726953
- 2014908 words of memory out of 5000000
- 29926 multiletter control sequences out of 15000+600000
+ 8244 strings out of 473919
+ 134860 string characters out of 5726953
+ 1999908 words of memory out of 5000000
+ 30962 multiletter control sequences out of 15000+600000
  689667 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,13n,79p,1103b,355s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 58i,13n,79p,1103b,362s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmb8v.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmbi8v.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmr8v.pfb><C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmri8v.pfb>
-Output written on Report.pdf (11 pages, 8912666 bytes).
+Output written on Report.pdf (10 pages, 8668237 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
+ 170 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 

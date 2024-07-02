@@ -17,6 +17,7 @@
 \usepackage[T5]{fontenc}
 \usepackage{titlesec}
 \usepackage{tabularx}
+\usepackage{adjustbox}
 
 \titlespacing*{\subsubsection}{0pt}{\baselineskip}{\baselineskip}
 
@@ -81,8 +82,6 @@ Guolin Ke và đồng nghiệp đề xuất hai kỹ thuật mới là Gradient-
 
 European Centre for Medium-Range Weather Forecasts (ECMWF) sử dụng mô hình EMOS để cải thiện dự báo thời tiết từ mô hình dự báo số học [3]. Việc áp dụng EMOS đã giúp ECMWF cải thiện độ chính xác của dự báo thời tiết, đặc biệt là ở các kỳ vọng ngắn và trung hạn.
 
-Nhóm Simon J. Julier và Jeffrey K. Uhlmann[4] đã nghiên cứu phần mở rộng mới của thuật toán Kalman Filter (EKF) để xử lý các hệ thống phi tuyến. Họ đã sử dụng dữ liệu về phương tiện đi vào khí quyển với độ cao lớn. Kết quả mô hình cho thấy unscented filter ước tính sai số bình phương trung bình của nó rất chính xác và có thể tin tưởng vào các ước tính của bộ lọc. Tuy nhiên, EKF rất không nhất quán: sai số bình phương trung bình cực đại trong x1 là 0,4km2 trong khi hiệp phương sai ước tính của nó nhỏ hơn một trăm lần. Phần mở rộng của thuật toán Kalman Filter này loại bỏ hiệu quả hầu hết các phép biến đổi tọa độ phi tuyến thông thường.
-
 Trong một nghiên cứu được công bố vào năm 2007, Chin-Teng Lin và đồng nghiệp đã sử dụng mô hình Fuzzy Time Series để dự đoán huyết áp trong tương lai dựa trên các giá trị huyết áp trong quá khứ [5]. Mô hình này sử dụng các tập luật Fuzzy để mô hình hóa mối quan hệ giữa các biến số đầu vào và đầu ra. Kết quả của nghiên cứu cho thấy rằng mô hình Fuzzy có khả năng dự đoán chuỗi thời gian của huyết áp một cách chính xác và hiệu quả, giúp trong việc theo dõi sức khỏe của bệnh nhân và đưa ra các biện pháp phòng ngừa kịp thời.
 
 Nhóm tác giả Vaishnavi Gururaj, Shriya V R và Dr. Ashwini K [6] đã nghiên cứu về thị trường chứng khoán bằng mô hình Linear Regression. Dataset mà nhóm tác giả sử dụng là một năm dữ liệu cổ phiếu của Công ty Coca-Cola, từ 01/2017-2018. Các kết quả về độ đo bao gồm: 3.22 (RMSE), 2.53 (MAE), 10.37 (MSE) và 0.73 (R-Squared).
@@ -97,7 +96,12 @@ Tác giả Yongqiong Zhu [11] đã sử dụng mô hình RNN để dự đoán g
 
 \section{TÀI NGHUYÊN}
 \subsection{DỮ LIỆU}
-Bài báo sử dụng bộ dữ liệu được lấy từ dữ liệu chứng khoán của 3 công ty ABBV (Dữ liệu của công ty AbbVie được lấy về từ trang web finance.yahoo.com có 1259 dòng dữ liệu), AZN (Dữ liệu của công ty AstraZeneca được lấy về từ trang web finance.yahoo.com có 1259 dòng dữ liệu) và PFE (Dữ liệu của công ty Pfizer được lấy về từ trang web finance.yahoo.com có 1259 dòng dữ liệu). Với dữ liệu được thu thập từ ngày 1/3/2019 đến ngày 29/2/2024 và được tải về vào ngày 14/4/2024. Ở cả 3 bộ dữ liệu đều có các cột thuộc tính liên quan đến cổ phiếu.
+Bài báo sử dụng bộ dữ liệu được lấy từ dữ liệu chứng khoán của 3 công ty ABBV 
+(Dữ liệu của công ty AbbVie được lấy về từ trang web finance.yahoo.com có 1259 dòng dữ liệu), AZN 
+(Dữ liệu của công ty AstraZeneca được lấy về từ trang web finance.yahoo.com có 1259 dòng dữ liệu) 
+và PFE (Dữ liệu của công ty Pfizer được lấy về từ trang web finance.yahoo.com có 1259 dòng dữ liệu). 
+Với dữ liệu được thu thập từ ngày 1/3/2019 đến ngày 01/06/2024 và được tải về vào ngày 24/06/2024. 
+Ở cả 3 bộ dữ liệu đều có các cột thuộc tính liên quan đến cổ phiếu.
 
 \begin{table}[H]
   \centering
@@ -114,98 +118,6 @@ Bài báo sử dụng bộ dữ liệu được lấy từ dữ liệu chứng k
      Volume & Khối lượng giao dịch\\ \hline
 \end{tabular}
 \end{table}
-
-Thông tin dữ liệu thu thập được mô tả chi tiết trong bảng 2. Bảng 2 thể hiện đánh giá tổng quan trên thuộc tính Close – Thuộc tính được lựa chọn để thực hiện dự đoán giá đóng cửa cổ phiếu.
-
-\begin{table}[H]
-  \centering
-  \caption{Mô tả chi tiết về dữ liệu thu thập}
-\begin{tabular}{|>{\columncolor{red!20}}c|c|c|c|}
-    \hline
-     \rowcolor{red!20} & ABBV & AZN & PFE\\ \hline
-     Count & 1259 & 1259 & 1259 \\ \hline
-     Mean & 118.409 & 57.12 & 39.942\\ \hline
-     Std & 30.792 & 9.482 & 7.166\\ \hline
-     Min & 62.98 & 37.28 & 26.13\\ \hline
-     Max & 178.99 & 75.81 & 61.25\\ \hline
-     25\% & 89.475 & 50.06 & 34.942\\ \hline
-     50\% & 115.61 & 57 & 38.63\\ \hline
-     75\% & 147.505 & 65.595 & 44.71\\ \hline
-     Skewness & -0.027 & -0.176 & 0.54\\ \hline
-     Kurtosis & -1.34 & -0.862 & -0.42\\ \hline
-\end{tabular}
-\end{table}
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{Image/ABBV_Boxplot.jpg}
-    \caption{Biểu đồ Box Plot giá đóng cửa của ABBV}
-    \label{fig:1}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{Image/ABBV_Histogram.jpg}
-    \caption{Biểu đồ Histogram giá đóng cửa của ABBV}
-    \label{fig:2}
-    \end{minipage}
-\end{figure}
-- Giá trị Skewness gần bằng 0 cho thấy phân phối dữ liệu có hình dạng gần đối xứng.
-
-- Giá trị Kurtosis âm phân phối có độ nhọn thấp hơn bình thường
-
-- Biểu đồ Histogram cho thấy tần suất xuất hiện của giá cổ phiếu có giá trị từ 142.98 đến 152.98 là nhiều nhất.
-
-- Biểu đồ Boxplot cho thấy dữ liệu cổ phiếu ABBV không có giá trị ngoại lai và độ phân tán lớn.
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{Image/AZN_Boxplot.jpg}
-    \caption{Biểu đồ Box Plot giá đóng cửa của AZN}
-    \label{fig:1}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{Image/AZN_Histogram.jpg}
-    \caption{Biểu đồ Histogram giá đóng cửa của AZN}
-    \label{fig:2}
-    \end{minipage}
-\end{figure}
-- Giá trị Skewness âm cho thấy phân phối dữ liệu lệch mạnh về bên trái so với trung vị.
-
-- Giá trị Kurtosis âm tuy nhiên không có sự khác biệt lớn nên có độ nhọn thấp hơn bình thường.
-
-- Biểu đồ Histogram cho thấy tần suất xuất hiện của giá cổ phiếu có giá trị từ 65.18 đến 68.28 là nhiều nhất.
-
-- Biểu đồ Boxplot cho thấy dữ liệu cổ phiếu AZN không có giá trị ngoại lai và độ phân tán ít.
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{Image/PFE_Boxplot.jpg}
-    \caption{Biểu đồ Box Plot giá đóng cửa của PFE}
-    \label{fig:1}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{Image/PFE_Histogram.jpg}
-    \caption{Biểu đồ Histogram giá đóng cửa của PFE}
-    \label{fig:2}
-    \end{minipage}
-\end{figure}
-- Giá trị Skewness dương cho thấy phân phói dữ liệu lệch nhẹ về bên phải.
-
-- Giá trị Kurtosis này nhỏ hơn 0 cho thấy phân phối có độ nhọn thấp hơn bình thường.
-
-- Biểu đồ Histogram cho thấy tần suất xuất hiện của giá cổ phiếu có giá trị từ 35.33 đến 37.63 là nhiều nhất.
-
-- Biểu đồ Boxplot cho thấy dữ liệu cổ phiếu PFE có giá trị ngoại lai nằm ngoài giá trị max và độ phân tán ít.
-
-Để quá trình thực nghiệm đạt hiệu quả tốt nhất, chúng tôi sử dụng một số công cụ bao gồm: Google Colab - Colaborator hay còn gọi là Google Colab, là một sản phẩm từ Google Research, nó cho phép chạy các dòng lệnh code python qua trình duyệt. Có thể sử dụng tài nguyên máy tính để chạy nhanh hơn như CPU tốc độ cao, GPUs, TPUs, …Visual Studio Code - Là một trình soạn thảo mã nguồn mở gọn nhẹ nhưng có khả năng vận hành mạnh mẽ trên 3 nền tảng là Windows, Linux và macOS được phát triển bởi Microsoft. Bên cạnh đó, chúng tôi sử dụng một số thư viện trong quá trình thực nghiệm như: numpy, pandas, matplotlib, scikit-learn, keras, minmaxscaler,…
 \subsection{CÁC ĐỘ ĐO CHẤT LƯỢNG}
 Chúng tôi đánh giá hiệu suất của các mô hình dự báo bằng ba chỉ số chính: Sai số trung bình bình phương (RMSE), Sai số trung bình tuyệt đối (MAE), và Sai số trung bình tuyệt đối phần trăm (MAPE), đảm bảo kiểm thử chính xác và toàn diện.
 
@@ -328,6 +240,24 @@ Input gate: $i_t = \sigma(W_i \cdot x_t + U_i \cdot h_{t-1})$\\
 Cell gate: $\tilde{c}_t = \tanh(W_c \cdot x_t + U_c \cdot h_{t-1})$\\
 Output gate: $o_t = \sigma(W_o \cdot x_t + U_o \cdot h_{t-1})$\\
 Cell state: $c_t = f_t \cdot \tilde{c}_t + i_t \cdot c_{t-1}$
+\subsection{SEMOS}
+SEMOS (Smooth EMOS) là một mô hình được đề xuất bởi Lang và các cộng sự (2020) để dự báo phân phối của một biến ngẫu nhiên \(Y\) có dạng phân phối chuẩn với trung bình và phương sai thay đổi theo thời gian. Mô hình SEMOS sử dụng các spline hồi quy chu kỳ để mô phỏng sự biến đổi theo mùa trong các tham số phân phối của biến.
+Cụ thể, mô hình SEMOS có các phương trình như sau:
+
+ Trung bình của phân phối tại thời điểm \(t\), \(\mu_S(t)\):
+    \[\mu_S(t) := a_0 + f_0(t) + (a_1 + f_1(t)) \cdot x(t)\]
+    \[= a_0 + f_0(t) + f_1(t) \cdot x(t) + a_1 \cdot x(t),\]
+    trong đó \(f_0(t)\) và \(f_1(t)\) là các hàm spline hồi quy chu kỳ.
+
+Log-phương sai của phân phối tại thời điểm \(t\):
+    \[\log(\sigma_S(t)) := b_0 + g_0(t) + (b_1 + g_1(t)) \cdot s(t)\]
+    \[= b_0 + g_0(t) + g_1(t) \cdot s(t) + b_1 \cdot s(t),\]
+    trong đó \(g_0(t)\) và \(g_1(t)\) là các hàm spline hồi quy chu kỳ.
+
+Các hàm spline hồi quy chu kỳ \(f_i(t)\) và \(g_i(t)\) được định nghĩa dựa trên chuỗi Fourier bị cắt ngắn, với các hệ số được tối ưu hóa thông qua việc tối thiểu hóa CRPS (Continuous Ranked Probability Score).
+
+Mô hình SEMOS được thiết kế để nắm bắt hiệu ứng theo mùa và xu hướng trong dữ liệu dự báo, đồng thời có khả năng dự báo phân phối của biến ngẫu nhiên một cách chính xác hơn.
+
 \subsection{RANDOM FOREST (RF)}
 Random Forest là một phương pháp học máy kết hợp rộng rãi được sử dụng vì tính linh hoạt, đơn giản và thường mang lại kết quả chất lượng. Về bản chất thì Random Forest là tập hợp của nhiều cây quyết định, thay vì phụ thuộc vào một cây, nó lấy dự đoán từ mỗi cây và dựa trên đa số phiếu dự đoán, dự đoán kết quả cuối cùng.
 
@@ -409,8 +339,7 @@ Fully Connected Layers (Lớp kết nối đầy đủ): Các lớp kết nối 
 
 Output Layer (Lớp đầu ra): Lớp cuối cùng của mạng, thường sử dụng hàm kích hoạt phù hợp (ví dụ: softmax cho phân loại) để tạo ra dự đoán cuối cùng.
 \subsection{FUZZY FOR PREDICT TIMES SERIES}
-Mô hình Fuzzy time series là một khái niệm khác để giải quyết các vấn đề dự báo trong trường hợp dữ liệu lịch sử được biểu diễn dưới dạng các giá trị ngôn ngữ. Chuỗi thời gian mờ dựa trên các công trình của Zadeh , Song và Chissom , đã đầu tiên đề xuất một mô hình dự báo được gọi là Fuzzy Time Series.
-
+Dựa trên lý thuyết tập mờ, logic mờ và phép suy luận mờ của Zadeh , Song và Chissom  đưa ra định nghĩa về chuỗi thời gian mờ và phác thảo về cách mô hình hóa nó thông qua các phương trình quan hệ mờ và lập luận mờ. Điều này nhằm giải quyết các vấn đề dự báo khi dữ liệu lịch sử được biểu diễn dưới dạng các giá trị ngôn ngữ.
 Trong chuỗi thời gian mờ, các giá trị được biểu diễn bằng các tập mờ được xác định trên phạm vi bài toán U, trong đó U = {$u_1$, $u_2$,...$u_n$}. Một tập mờ A có thể được biểu diễn bằng:
 \[A = \frac{f_A(u_1)}{u_1} + \frac{f_A(u_2)}{u_2} + \cdots + \frac{f_A(u_n)}{u_n}\]
 
@@ -689,45 +618,47 @@ Kết quả thực nghiệm sau khi thu thập được đánh giá dựa trên 
     \caption{Đánh giá kết quả thực nghiệm}
     \renewcommand{\arraystretch}{2}
     \tiny
-    \begin{tabular}{|>{\centering\arraybackslash}m{0.6cm}|>{\centering\arraybackslash}m{0.4cm}|>{\centering\arraybackslash}m{0.4cm}|>{\centering\arraybackslash}m{0.6cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|>{\centering\arraybackslash}m{0.5cm}|} \hline
+    \begin{adjustbox}{width=0.5\textwidth}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|} \hline
           \multicolumn{2}{|c|}{Dataset} & \multicolumn{3}{c|}{ABBV} & \multicolumn{3}{c|}{AZN} & \multicolumn{3}{c|}{PFE} \\ \cline{1-11}
           \multicolumn{2}{|c|}{Tỷ lệ chia} & 8:2 & 7:3 & 6:4 & 8:2 & 7:3 & 6:4 & 8:2 & 7:3 & 6:4 \\ \hline
          Mô hình & Độ đo & & & & & & & & & \\ \hline
          \multirow{3}{*}{LR} & RMSE & 21,388 & 18,116 & 14,73 & 6,185 & 5,04 & 5,612 & 20,195 & 19,74 & 16,978 \\ \cline{2-11}
-         & MSE & 19,277 & 15,012 & 11,84 & 5,359 & 4,29 & 4,59 & 19,504 & 17,43 & 13,716 \\ \cline{2-11}
+         & MAE & 19,277 & 15,012 & 11,84 & 5,359 & 4,29 & 4,59 & 19,504 & 17,43 & 13,716 \\ \cline{2-11}
          & MAPE & 0,13 & 0,1 & 0,0796 & 0,08 & 0,06 & 0,0707 & 0,653 & 0,56 & 0,433 \\ \cline{2-11} \hline
          \multirow{3}{*}{GRU} & RMSE & 151,229 & 150,204 & 149,918 & 65,534 & 67,294 & 65,811 & 31,44 & 35,309 & 39,235 \\ \cline{2-11}
-         & MSE & 150,893 & 149,86 & 149,59 & 65,496 & 67,205 & 65,657 & 31,285 & 34,953 & 38,583 \\ \cline{2-11}
+         & MAE & 150,893 & 149,86 & 149,59 & 65,496 & 67,205 & 65,657 & 31,285 & 34,953 & 38,583 \\ \cline{2-11}
          & MAPE & 19675,9 & 20115,857 & 20188,16 & 8691,35 & 8515,425 & 8892,012 & inf & inf & inf \\ \cline{2-11} \hline
          \multirow{3}{*}{ARIMA} & RMSE & 15,785 & 14,413 & 35,4 & 7,419 & 10,44 & 4,84 & 7,466 & 13,15 & 13,126 \\ \cline{2-11}
-         & MSE & 12,28 & 11,25 & 32,4 & 6,638 & 9,649 & 3,549 & 6,39 & 11,569 & 10,68 \\ \cline{2-11}
+         & MAE & 12,28 & 11,25 & 32,4 & 6,638 & 9,649 & 3,549 & 6,39 & 11,569 & 10,68 \\ \cline{2-11}
          & MAPE & 0,076 & 0,07 & 0,216 & 0,1 & 0,138 & 0,054 & 0,223 & 0,373 & 0,336 \\ \cline{2-11} \hline
-         \multirow{3}{*}{LTSM} & RMSE & 0,034 & 0,036 & 0,032 & 0,027 & 0,028 & 0,038 & 0,019 & 0,023 & 0,036 \\ \cline{2-11}
-         & MSE & 0,027 & 0,03 & 0,024 & 0,0197 & 0,0203 & 0,029 & 0,015 & 0,018 & 0,028 \\ \cline{2-11}
+         \multirow{3}{*}{LTSM} & \textbf{RMSE} & \textbf{0,034} & \textbf{0,036} & \textbf{0,032} & \textbf{0,027} & \textbf{0,028} & \textbf{0,038} & \textbf{0,019} & \textbf{0,023} & \textbf{0,036} \\ \cline{2-11}
+         & \textbf{MAE} & \textbf{0,027} & \textbf{0,03} & \textbf{0,024} & \textbf{0,0197} & \textbf{0,0203} & \textbf{0,029} & \textbf{0,015} & \textbf{0,018} & \textbf{0,028} \\ \cline{2-11}
          & MAPE & 0,036 & 0,038 & 0,033 & 0,027 & 0,028 & 0,043 & 47,25.$10^9$ & 7,41.$10^9$ & 28,75.$10^9$ \\ \cline{2-11} \hline
          \multirow{3}{*}{RNN} & RMSE & 5,952 & 4,352 & 4,71 & 1,39 & 1,51 & 1,9 & 0,888 & 1,172 & 1,146 \\ \cline{2-11}
-         & MSE & 4,961 & 3,622 & 3,623 & 1,024 & 1,19 & 1,57 & 0,705 & 0,89 & 0,873 \\ \cline{2-11}
+         & MAE & 4,961 & 3,622 & 3,623 & 1,024 & 1,19 & 1,57 & 0,705 & 0,89 & 0,873 \\ \cline{2-11}
          & MAPE & 0,031 & 0,023 & 0,024 & 0,015 & 0,017 & 0,023 & 0,022 & 0,024 & 0,022 \\ \cline{2-11} \hline
          \multirow{3}{*}{RF} & RMSE & 7,5  & 12 & 11,4 & 1,5 & 4,8 & 3,3 & 2,1 & 1,3 & 1,9 \\ \cline{2-11}
-         & MSE & 56 & 145 & 130,4 & 2,5 & 23,4 & 11,3 & 4,6 & 1,8 & 3,6 \\ \cline{2-11}
+         & MAE & 5 & 7,8 & 9,4 & 1,2 & 3,3 & 2,4 & 1,8 & 1 & 1,4 \\ \cline{2-11}
          & MAPE & 0,02 & 0,04 & 0,06 & 0,01 & 0,04 & 0,03 & 0,06 & 0,03 & 0,04 \\ \cline{2-11} \hline
          \multirow{3}{*}{FTS} & RMSE & 5,875  & 5,038 & 4,088 & 2,026 & 1,968 & 1,721 & 1,604 & 1,541 & 1,840 \\ \cline{2-11}
-         & MSE & 34,52 & 25,38 & 16,71 & 4,106 & 3,874 & 2,965 & 2,572 & 2,375 & 3,386 \\ \cline{2-11}
+         & MAE & 34,52 & 25,38 & 16,71 & 4,106 & 3,874 & 2,965 & 2,572 & 2,375 & 3,386 \\ \cline{2-11}
          & MAPE & 0,029 & 0,027 & 0,022 & 0,023 & 0,024 & 0,021 & 0,045 & 0,039 & 0,040 \\ \cline{2-11} \hline
          \multirow{3}{*}{LightGBM} & RMSE & 5,56  & 4,42 & 5,15 & 1,66 & 1,66 & 1,73 & 2,07 & 1,61 & 1,63 \\ \cline{2-11}
-         & MSE & 4,31 & 3,38 & 4,07 & 1,28 & 1,24 & 1,32 & 1,61 & 1,23 & 1,23 \\ \cline{2-11}
-         & MAPE & 0,004 & 0,004 & 0,005 & 0,001 & 0,001 & 0,002 & 0,002 & 0,001 & 0,002 \\ \cline{2-11} \hline
+         & MAE & 4,31 & 3,38 & 4,07 & 1,28 & 1,24 & 1,32 & 1,61 & 1,23 & 1,23 \\ \cline{2-11}
+         & \textbf{MAPE} & \textbf{0,004} & \textbf{0,004} & \textbf{0,005} & \textbf{0,001} & \textbf{0,001} & \textbf{0,002} & \textbf{0,002} & \textbf{0,001} & \textbf{0,002} \\ \cline{2-11} \hline
          \multirow{3}{*}{ResCNN} & RMSE & 13,6  & 13,282 & 9,785 & 6,419 & 6,35 & 10,048 & 4,038 & 3,645 & 4,272 \\ \cline{2-11}
-         & MSE & 11,78 & 11,633 & 8,38 & 5,59 & 5,218 & 9,134 & 3,336 & 2,946 & 3,499 \\ \cline{2-11}
+         & MAE & 11,78 & 11,633 & 8,38 & 5,59 & 5,218 & 9,134 & 3,336 & 2,946 & 3,499 \\ \cline{2-11}
          & MAPE & 0,084 & 0,078 & 0,054 & 0,0896 & 0,082 & 0,159 & 0,096 & 0,074 & 0,0869 \\ \cline{2-11} \hline
     \end{tabular}
-  \end{table}
-Bảng trên ghi nhận các giá trị độ đo RMSE, MSEM MAPE của các mô hình Random Forest (RF), Fuzzy for predict times series (FTS), 
+    \end{adjustbox}
+\end{table}
+Bảng trên ghi nhận các giá trị độ đo RMSE, MAE, MAPE của các mô hình Random Forest (RF), Fuzzy for predict times series (FTS), 
 LightGBMModel, ResCNN, Linear regression, Autoregressive Integrated Moving Average (ARIMA), Recurrent Neural Networks (RNN), Gated recurrent units (GRU)
 và Long Short-Term Memory (LSTM) trên tập test của ba bộ dữ liệu ABBV, AZN và PFE
 theo BA tỉ lệ của train:test là 6:4 , 7:3 và 8:2
 
-Long Short-Term Memory (LSTM) là mô hình cho giá trị Root Mean Square Error (RMSE) và Mean Square Error (MSE) thấp nhất trên cả ba bộ dữ liệu 
+Long Short-Term Memory (LSTM) là mô hình cho giá trị Root Mean Square Error (RMSE) và Mean Absolute Error (MAE) thấp nhất trên cả ba bộ dữ liệu 
 và cũng như với ba tỉ lệ train:test.
 
 LightGBMModel (LightGBM) đạt được giá trị Mean Absolute Percentage Error (MAPE) thấp nhất trên cả ba bộ dữ liệu và 
@@ -757,7 +688,7 @@ thêm nhiều dữ liệu từ các thị trường tài chính khác nhau như 
 \bibitem{b1} Zou Xiaowu, Wang Zidong, Li Qi, Sheng Weiguo ``Integration of residual network and convolutional neural network along with various activation functions and global pooling for time series classification'' ,2019. [Online]. Link: https://www.sciencedirect.com/science/article/abs/pii/S0925231219311506
 \bibitem{b2} Guolin Ke, Qi Meng, Thomas Finley ``LightGBM: A Highly Efficient Gradient Boosting Decision Tree'' ,2017. [Online]. Link: https://proceedings.neurips.cc/paper\_files/paper/2017/file/...
 \bibitem{b3} Mária Lakatos, Sebastian Lerch, Stephan Hemri, Sándor Baran ``Comparison of multivariate post-processing methods using global ECMWF ensemble forecasts'' ,2023. [Online]. Link: https://rmets.onlinelibrary.wiley.com/doi/full/10.1002/qj.4436
-\bibitem{b4} S. Julier and J. Uhlmann, “New extension of the Kalman filter to nonlinear systems,” Proceedings of SPIE, Jul. 1997, doi: 10.1117/12.280797.
+\bibitem{b4}
 \bibitem{b5} Gang Liu, Fuyuan Xiao, ... (2020) ``A Fuzzy Interval Time-Series Energy and Financial Forecasting Model Using Network-Based Multiple Time-Frequency Spaces and the Induced-Ordered Weighted Averaging Aggregation Operation''.[Online]. Link: https://ieeexplore.ieee.org/abstract/document/8988162
 \bibitem{b6} Gururaj, V., Shriya, V. R., \& Ashwini, K. (2019). Stock market prediction using linear regression and support vector machines. Int J Appl Eng Res, 14(8), 1931-1934.
 \bibitem{b7} Disha, R. A., \& Waheed, S. (2022). Performance analysis of machine learning models for intrusion detection system using Gini Impurity-based Weighted Random Forest (GIWRF) feature selection technique. Cybersecurity, 5(1), 1-20
