@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1719944542.7772 "d:/STUDYDOC/HK8/PTDLKD/3/Latex/Report.tex" "Report.pdf" "Report" 1719944548.43341 0
+["pdflatex"] 1719962593.54847 "d:/STUDYDOC/HK8/PTDLKD/3/Latex/Report.tex" "Report.pdf" "Report" 1719962599.12303 0
   "C:/Users/dovan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1719921847 89969 e95579120a3aa0ebc21d2737ca2ba701 ""
   "C:/Users/dovan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1719326118 24264068 6078024e4105bfed365f48dfeae3f538 ""
   "C:/Users/dovan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -141,10 +141,11 @@
   "Image/RNN30.png" 1719344317 317850 630c70a71950b4a5be98ed356cdb84ec ""
   "Image/RNN60.png" 1719344328 331080 94aa25b53f118768ad0a23d793c44922 ""
   "Image/RNN90.png" 1719344339 327372 6269f8e1a565ba96e77e8d0504a018d8 ""
+  "Image/SEMOS30.png" 1719962054 403220 0c30eb28b6957a83897b2731d8c133d1 ""
   "Image/Trees Leaf-wise Growth Strategy.png" 1719034005 113885 d4a51847dd5b37d5cdf01f1c84a2824e ""
-  "Report.aux" 1719944548 10011 462450d7c81da6b5c57879dfc52c8c85 "pdflatex"
-  "Report.tex" 1719944542 49217 75e09bf48c4b63bd15dfca0e01e8c97b ""
-  "d:/STUDYDOC/HK8/PTDLKD/3/Latex/Report.tex" 1719944542 49217 75e09bf48c4b63bd15dfca0e01e8c97b ""
+  "Report.aux" 1719962598 10312 da082d04d5810b669b7cd83a3d90bf0a "pdflatex"
+  "Report.tex" 1719962586 49501 33ae4a24d100dacd3692ed0bad51a451 ""
+  "d:/STUDYDOC/HK8/PTDLKD/3/Latex/Report.tex" 1719962586 49501 33ae4a24d100dacd3692ed0bad51a451 ""
   (generated)
   "Report.aux"
   "Report.log"
